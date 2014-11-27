@@ -4,14 +4,29 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CIB___HD 测试版.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>CIB___HD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A1DA62E1A257F15005926AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A1DA6411A2582CD005926AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0AC750D21A2465AF000A7F86</key>
 		<dict>
 			<key>primary</key>
