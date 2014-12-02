@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "UIUrlButton.h"
 
+#define kFilename        @"menuList.txt"
+
 @interface ViewController ()
 
 @end
@@ -25,17 +27,24 @@
     [self.firstMenuTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self.secondMenuTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
 
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"MenuList" withExtension:@"plist"]];
+//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"MenuList" withExtension:@"plist"]];
+//
+//    if ([NSJSONSerialization isValidJSONObject:dic]) {
+//        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+//        [data writeToFile:[self dataFilePath] atomically:YES];
+//    }
+//    
+//    self.firstMenuArray = [dic objectForKey:@"menuList"];
+//    if (self.secondMenuArray.count == 0) {
+//        self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
+//    }
+//    if (self.thirdMenuArray.count == 0) {
+//        self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
+//    }
 
-    self.firstMenuArray = [dic objectForKey:@"menuList"];
-    if (self.secondMenuArray.count == 0) {
-        self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
-    }
-    if (self.thirdMenuArray.count == 0) {
-        self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
-    }
-
-    [self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:CIB_IP]]];
+    //[self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:CIB_IP]]];
+    
+    [self loadHomePage];
     
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
     [self.view addSubview:self.activityView];
@@ -96,6 +105,52 @@
     }else{
         [webview loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:url]]];
     }
+}
+
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(
+                                                         NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kFilename];
+}
+
+// 载入首页
+- (void)loadHomePage
+{
+    [self loadWebWithSettingKey:@"url"];
+}
+
+- (BOOL)loadWebWithSettingKey:(NSString *)strKey
+{
+    NSString *str = [self getStrFromSettingKey:strKey];
+    if (str == nil) {
+        return NO;
+    }
+    NSLog(@"%@ == %@",strKey,str);
+    [self loadWebWithStrUrl:str];
+    return YES;
+}
+
+- (NSString *)getStrFromSettingKey:(NSString *)strKey
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults synchronize];
+    NSString *strUrl = [defaults objectForKey:strKey];
+    return strUrl;
+}
+
+- (void)loadWebWithStrUrl:(NSString *)strUrl
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults synchronize];
+//    BOOL isClear = [defaults objectForKey:@"clearCache"];
+//    if (isClear) {
+//        [[NSURLCache sharedURLCache] removeAllCachedResponses]; // 清空缓存
+//    }
+    
+    NSURL *url = [NSURL URLWithString:strUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.mainWebView loadRequest:request];
 }
 
 #pragma mark - UITableViewDataSource
@@ -185,6 +240,43 @@
         self.isFirstConnectNet = NO;
     }
     NSLog(@"载入网页成功!\n[%@]\n",webView.request.URL.absoluteString);
+    
+    // TODO:从网页获取地址
+    NSString *getStr = [webView stringByEvaluatingJavaScriptFromString:@"menujson"];
+    
+    // 若页面取不到 menujson 字符串, 使用本地 plist 文件内容
+    if (!getStr||[getStr isEqualToString:@""]) {
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"MenuList" withExtension:@"plist"]];
+        
+        self.firstMenuArray = [dic objectForKey:@"menuList"];
+        if (self.secondMenuArray.count == 0) {
+            self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
+        }
+        if (self.thirdMenuArray.count == 0) {
+            self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
+        }
+        
+        [self.firstMenuTableView reloadData];
+        [self.secondMenuTableView reloadData];
+        
+        
+    }else{
+        NSData *data = [getStr dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dicList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        if (dicList.count != 0) {
+            self.firstMenuArray = [dicList objectForKey:@"menuList"];
+            if (self.secondMenuArray.count == 0) {
+                self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
+            }
+            if (self.thirdMenuArray.count == 0) {
+                self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
+            }
+        }
+        [self.firstMenuTableView reloadData];
+        [self.secondMenuTableView reloadData];
+    }
+    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -218,7 +310,7 @@
         case 1:  // 重试
         {
             // TODO:
-            [self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:CIB_IP]]];
+            [self loadHomePage];
         }
             break;
         default:
