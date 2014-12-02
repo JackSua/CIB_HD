@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "UIUrlButton.h"
 
 @interface ViewController ()
 
@@ -23,23 +24,17 @@
     
     [self.firstMenuTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self.secondMenuTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    
-    // FIXME:测试数据
-//    self.firstMenuArray = [NSArray arrayWithObjects:@"移动金融",@"投资理财",@"信用卡",@"金融助手", nil];
-//    self.secondMenuArray = [NSArray arrayWithObjects:@"账户查询",@"服务管理",@"资金归集",@"贷款融资",@"兴业e卡",@"自助缴费",@"转账汇款", nil];
-//    self.thirdMenuArray = [NSArray arrayWithObjects:@"紧急挂失",@"行内账户管理",@"功能与限额设置",@"安全保护",@"密码修改",@"个人资料修改",@"登陆方式管理",@"注销网上银行", nil];
-    
+
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"MenuList" withExtension:@"plist"]];
 
     self.firstMenuArray = [dic objectForKey:@"menuList"];
     if (self.secondMenuArray.count == 0) {
         self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
     }
-    
-    NSLog(@"self.firstMenuArray = %@",self.firstMenuArray);
-    
-    //[self createView];
-    
+    if (self.thirdMenuArray.count == 0) {
+        self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
+    }
+
     [self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:CIB_IP]]];
     
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
@@ -47,8 +42,7 @@
     
 }
 
-
-
+// 创建三级菜单
 - (void)createThirdMenuView
 {
     
@@ -64,19 +58,21 @@
             if ((i*5+j) >= self.thirdMenuArray.count) {
                 break;
             }
-            UIButton *btnThirdMenu = [UIButton buttonWithType:UIButtonTypeSystem];
+            UIUrlButton *btnThirdMenu = [UIUrlButton buttonWithType:UIButtonTypeSystem];
             btnThirdMenu.frame = CGRectMake(self.ThirdMenuView.frame.size.width/5*j, self.ThirdMenuView.frame.size.height/4*i, self.ThirdMenuView.frame.size.width/5, self.ThirdMenuView.frame.size.height/4);
-            [btnThirdMenu setTitle:[self.thirdMenuArray[i*5+j] objectForKey:@"name"] forState:UIControlStateNormal];
-            btnThirdMenu.layer.borderColor = [[UIColor blackColor] CGColor];
-            btnThirdMenu.layer.borderWidth = 0.5;
+            NSDictionary *oneThirdMenuInfo = self.thirdMenuArray[i*5+j];
+            [btnThirdMenu setTitle:[oneThirdMenuInfo objectForKey:@"name"] forState:UIControlStateNormal];
+            btnThirdMenu.urlString = [oneThirdMenuInfo objectForKey:@"url"];
             [btnThirdMenu addTarget:self action:@selector(doBtnThirdMenu:) forControlEvents:UIControlEventTouchUpInside];
             [self.ThirdMenuView addSubview:btnThirdMenu];
         }
     }
 }
 
-- (void)doBtnThirdMenu:(UIButton *)sender
+// 三级菜单相应方法
+- (void)doBtnThirdMenu:(UIUrlButton *)sender
 {
+    [self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:sender.urlString]]];
     [self webViewChangeRightToLeft];
 }
 
@@ -239,15 +235,7 @@
         self.isShrink = YES;
         [self.firstMenuTableView setFrame:CGRectMake(0, 69, 55, 654)];
         [self.firstMenuTableView setRowHeight:55];
-        //[self.firstMenuTableView reloadData];
     }];
-//    [UIView animateWithDuration:0.8f animations:^{
-//        self.isShrink = YES;
-//        [self.firstMenuTableView setFrame:CGRectMake(0, 69, 55, 654)];
-//        //[self.firstMenuTableView reloadData];
-//    } completion:^(BOOL finished) {
-//        [self.firstMenuTableView setRowHeight:55];
-//    }];
 }
 
 // 放大第一级菜单
@@ -257,7 +245,6 @@
         self.isShrink = NO;
         [self.firstMenuTableView setFrame:CGRectMake(0, 69, 191, 654)];
         [self.firstMenuTableView setRowHeight:164];
-        //[self.firstMenuTableView reloadData];
     }];
 }
 

@@ -24,7 +24,7 @@
 							<key>tag</key>
 							<string></string>
 							<key>url</key>
-							<string></string>
+							<string>http://www.baidu.com</string>
 						</dict>
 						<dict>
 							<key>name</key>
@@ -32,7 +32,7 @@
 							<key>tag</key>
 							<string></string>
 							<key>url</key>
-							<string></string>
+							<string>http://news.l63.com</string>
 						</dict>
 					</array>
 				</dict>

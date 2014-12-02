@@ -21,6 +21,8 @@
 		0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA6561A25B9EE005926AA /* GetConfigInfoUtil.m */; };
 		0A1DA65B1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
 		0A1DA65C1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
+		0A6DC0641A2D8C9000F210C3 /* UIUrlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */; };
+		0A6DC0651A2D8C9000F210C3 /* UIUrlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */; };
 		0A72452F1A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
 		0A7245301A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
 		0A765BB21A26CA3300413927 /* MenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A765BB11A26CA3300413927 /* MenuList.plist */; };
@@ -62,6 +64,8 @@
 		0A1DA6561A25B9EE005926AA /* GetConfigInfoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetConfigInfoUtil.m; sourceTree = "<group>"; };
 		0A1DA6591A25BE28005926AA /* PublicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicInfo.h; sourceTree = "<group>"; };
 		0A1DA65A1A25BE28005926AA /* PublicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicInfo.m; sourceTree = "<group>"; };
+		0A6DC0621A2D8C9000F210C3 /* UIUrlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUrlButton.h; sourceTree = "<group>"; };
+		0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUrlButton.m; sourceTree = "<group>"; };
 		0A72452E1A28524400A0CB81 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		0A765BB11A26CA3300413927 /* MenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuList.plist; sourceTree = "<group>"; };
 		0A765BB41A270F1700413927 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				0AC750EE1A2465AF000A7F86 /* Images.xcassets */,
 				0A765BB41A270F1700413927 /* ActivityIndicatorView.h */,
 				0A765BB51A270F1700413927 /* ActivityIndicatorView.m */,
+				0A6DC0621A2D8C9000F210C3 /* UIUrlButton.h */,
+				0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 				0A765BB71A270F1700413927 /* ActivityIndicatorView.m in Sources */,
 				0A1DA6431A2582CD005926AA /* ViewController.m in Sources */,
 				0A1DA6441A2582CD005926AA /* AppDelegate.m in Sources */,
+				0A6DC0651A2D8C9000F210C3 /* UIUrlButton.m in Sources */,
 				0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
 				0A1DA6451A2582CD005926AA /* main.m in Sources */,
 			);
@@ -369,6 +376,7 @@
 				0A765BB61A270F1700413927 /* ActivityIndicatorView.m in Sources */,
 				0AC750ED1A2465AF000A7F86 /* ViewController.m in Sources */,
 				0AC750E71A2465AF000A7F86 /* AppDelegate.m in Sources */,
+				0A6DC0641A2D8C9000F210C3 /* UIUrlButton.m in Sources */,
 				0A1DA6571A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
 				0AC750E31A2465AF000A7F86 /* main.m in Sources */,
 			);
