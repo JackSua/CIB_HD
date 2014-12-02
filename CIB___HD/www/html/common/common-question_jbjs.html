@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="user-scalable=no, width=435, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<title></title>
+	<script type="text/javascript" src="../../resources/js/basic_include.js"></script>
+</head>
+<body>
+<div class="basic_wb">
+	<div class="basic_introduction" id="basic_scroll">
+		<ul>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>钱大掌柜是什么平台</h1>
+				<div class="basic_content">
+				<p class="content">钱大掌柜是兴业银行与480多家联网合作金融机构（包括银行、证券、信托等各类型金融机构）共同打造的互联网金融平台，通过对银行理财产品、贵金属交易、银证转账、基金代销、信托理财等财富管理业务进行整合，为广大个人客户提供一站式全方位的财富管理服务。</p>
+				</div>
+			</li>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>首次在线购买银行理财产品需注意</h1>
+				<div class="basic_content">
+				<p class="content">钱大掌柜的新客户通过钱大掌柜官方网站（www.yypt.com）或手机端首次在线购买银行理财产品，可在钱大掌柜指定签约网点柜面进行风险承受能力评估。未在指定网点柜面进行风险承受能力评估的新客户，暂无法购买钱大掌柜销售的银行理财产品。</p>
+				</div>
+			</li>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>安全提示</h1>
+				<div class="basic_content">
+				<p class="content">1:妥善保管用户名和登录密码，避免使用姓名、生日、电话号码等与本人明显相关的信息作为密码，不要将密码提供给他人。<br />
+	2:定期下载和安装最新的操作系统及浏览器安全补丁，不要开启来历不明的邮件等。<br />
+	3:不要在他人客户端上登录“钱大掌柜”进行交易，使用后请点击 “安全退出”按钮正常退出。<br />
+	4:发现任何疑问情况，请立即致电“钱大掌柜”客户服务热线：40018-95561。</p>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('.basic_introduction ul li').each(function(i,dom){
+			var $dom_h1=$(dom).children('h1');
+			$dom_h1.bind('click',function(){
+				$(dom).siblings('li').children('.basic_content').hide();
+				$(this).parent('li').siblings('li').children('h1').removeClass('cur');
+				var $is_visible=$(dom).children('.basic_content').css('display');
+				if($is_visible=='block'){
+					$(dom).children('.basic_content').hide();
+					$dom_h1.removeClass('cur');
+				}else{
+					$(dom).children('.basic_content').show();
+					$dom_h1.addClass('cur');
+				}
+			})
+		});
+	})
+</script>
+</html>

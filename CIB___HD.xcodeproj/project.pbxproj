@@ -21,6 +21,8 @@
 		0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA6561A25B9EE005926AA /* GetConfigInfoUtil.m */; };
 		0A1DA65B1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
 		0A1DA65C1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
+		0A72452F1A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
+		0A7245301A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
 		0A765BB21A26CA3300413927 /* MenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A765BB11A26CA3300413927 /* MenuList.plist */; };
 		0A765BB31A26CA3300413927 /* MenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A765BB11A26CA3300413927 /* MenuList.plist */; };
 		0A765BB61A270F1700413927 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A765BB51A270F1700413927 /* ActivityIndicatorView.m */; };
@@ -60,6 +62,7 @@
 		0A1DA6561A25B9EE005926AA /* GetConfigInfoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetConfigInfoUtil.m; sourceTree = "<group>"; };
 		0A1DA6591A25BE28005926AA /* PublicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicInfo.h; sourceTree = "<group>"; };
 		0A1DA65A1A25BE28005926AA /* PublicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicInfo.m; sourceTree = "<group>"; };
+		0A72452E1A28524400A0CB81 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		0A765BB11A26CA3300413927 /* MenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuList.plist; sourceTree = "<group>"; };
 		0A765BB41A270F1700413927 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
 		0A765BB51A270F1700413927 /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 		0AC750DC1A2465AF000A7F86 /* CIB___HD */ = {
 			isa = PBXGroup;
 			children = (
+				0A72452E1A28524400A0CB81 /* www */,
 				0AC750E51A2465AF000A7F86 /* AppDelegate.h */,
 				0AC750E61A2465AF000A7F86 /* AppDelegate.m */,
 				0AC750EB1A2465AF000A7F86 /* ViewController.h */,
@@ -313,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A765BB31A26CA3300413927 /* MenuList.plist in Resources */,
+				0A7245301A28524400A0CB81 /* www in Resources */,
 				0A1DA6531A2583E6005926AA /* Settings.bundle in Resources */,
 				0A1DA64B1A2582CD005926AA /* Images.xcassets in Resources */,
 				0A1DA64C1A2582CD005926AA /* InfoPlist.strings in Resources */,
@@ -324,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A72452F1A28524400A0CB81 /* www in Resources */,
 				0AC750EF1A2465AF000A7F86 /* Images.xcassets in Resources */,
 				0AC750E11A2465AF000A7F86 /* InfoPlist.strings in Resources */,
 				0A765BB21A26CA3300413927 /* MenuList.plist in Resources */,

@@ -10,10 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PublicInfo.h"
 
-@interface ActivityIndicatorView : UIView{
-    UIActivityIndicatorView *indicatorView;
-	UIView *blackView;
-}
+@interface ActivityIndicatorView : UIView
 @property(nonatomic, strong)UIActivityIndicatorView *indicatorView;
 @property(nonatomic, strong)UIView *blackView;
 -(void)stopAnimat;
