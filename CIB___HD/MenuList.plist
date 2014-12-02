@@ -604,14 +604,16 @@
 					<key>url</key>
 					<string></string>
 					<key>child</key>
-					<dict>
-						<key>name</key>
-						<string>资费标准</string>
-						<key>tag</key>
-						<string></string>
-						<key>url</key>
-						<string></string>
-					</dict>
+					<array>
+						<dict>
+							<key>name</key>
+							<string>资费标准</string>
+							<key>tag</key>
+							<string></string>
+							<key>url</key>
+							<string></string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -621,14 +623,16 @@
 					<key>url</key>
 					<string></string>
 					<key>child</key>
-					<dict>
-						<key>name</key>
-						<string>存贷利率</string>
-						<key>tag</key>
-						<string></string>
-						<key>url</key>
-						<string></string>
-					</dict>
+					<array>
+						<dict>
+							<key>name</key>
+							<string>存贷利率</string>
+							<key>tag</key>
+							<string></string>
+							<key>url</key>
+							<string></string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -638,14 +642,16 @@
 					<key>url</key>
 					<string></string>
 					<key>child</key>
-					<dict>
-						<key>name</key>
-						<string>理财计算器</string>
-						<key>tag</key>
-						<string></string>
-						<key>url</key>
-						<string></string>
-					</dict>
+					<array>
+						<dict>
+							<key>name</key>
+							<string>理财计算器</string>
+							<key>tag</key>
+							<string></string>
+							<key>url</key>
+							<string></string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
