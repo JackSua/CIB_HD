@@ -117,7 +117,16 @@
 // 载入首页
 - (void)loadHomePage
 {
+#if defined(DEVELOPMENT)
+    
     [self loadWebWithSettingKey:@"url"];
+    
+#else
+    
+    // TODO:载入首页
+    
+#endif
+    
 }
 
 - (BOOL)loadWebWithSettingKey:(NSString *)strKey
@@ -152,6 +161,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.mainWebView loadRequest:request];
 }
+
+- (IBAction)doBtnLogin:(id)sender {
+    
+}
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -241,6 +255,9 @@
     }
     NSLog(@"载入网页成功!\n[%@]\n",webView.request.URL.absoluteString);
     
+    
+#if defined(DEVELOPMENT)
+    
     // TODO:从网页获取地址
     NSString *getStr = [webView stringByEvaluatingJavaScriptFromString:@"menujson"];
     
@@ -277,6 +294,25 @@
         [self.secondMenuTableView reloadData];
     }
     
+#else
+    NSString *getStr = [webView stringByEvaluatingJavaScriptFromString:@"menujson"];
+    NSData *data = [getStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dicList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    if (dicList.count != 0) {
+        self.firstMenuArray = [dicList objectForKey:@"menuList"];
+        if (self.secondMenuArray.count == 0) {
+            self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
+        }
+        if (self.thirdMenuArray.count == 0) {
+            self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
+        }
+    }
+    [self.firstMenuTableView reloadData];
+    [self.secondMenuTableView reloadData];
+    
+#endif
+    
+    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -286,7 +322,8 @@
     if (![webView.request.URL.absoluteString hasSuffix:@"error1.html"]) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"www" ofType:nil];
         NSString *filePath = [path stringByAppendingPathComponent:@"/html/common/error1.html"];
-        [self loadUrl:webView url:filePath];
+        //[self loadUrl:webView url:filePath];
+        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]]];
     }
     
     if (self.isFirstConnectNet) {
