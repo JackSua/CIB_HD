@@ -166,6 +166,12 @@
     
 }
 
+- (void)loadLocalErrorWithWebView:(UIWebView *)webView
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"www" ofType:nil];
+    NSString *filePath = [path stringByAppendingPathComponent:@"/html/common/error1.html"];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]]];
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -320,10 +326,7 @@
     [self.activityView stopAnimat];
     
     if (![webView.request.URL.absoluteString hasSuffix:@"error1.html"]) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"www" ofType:nil];
-        NSString *filePath = [path stringByAppendingPathComponent:@"/html/common/error1.html"];
-        //[self loadUrl:webView url:filePath];
-        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]]];
+        [self loadLocalErrorWithWebView:webView];
     }
     
     if (self.isFirstConnectNet) {
