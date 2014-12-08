@@ -171,8 +171,15 @@
     [self.mainWebView loadRequest:request];
 }
 
+- (IBAction)doBtnHomePage:(id)sender {
+    [self loadHomePage];
+}
+
+
 - (IBAction)doBtnLogin:(id)sender {
     [[BasicPlugin getInstance]executePluginByUrl:@"callfunction://callbackId=WebViewPluginopenViewEvent&className=WebViewPlugin&method=openView&params=http%3A%2F%2Fnews.qq.com%24800%24500&currentPage=rindex.html&tt=1418005658128" tag:0];
+    
+    //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView

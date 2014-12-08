@@ -193,6 +193,17 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		0A8F37C61A3591100064B30A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0A8F37AE1A353EF10064B30A /* NSMutableArray+QueueAdditions.h */,
+				0A8F37AF1A353EF10064B30A /* NSMutableArray+QueueAdditions.m */,
+				0A8F37BA1A3549A60064B30A /* UIView+CGAffineTransform.h */,
+				0A8F37BB1A3549A60064B30A /* UIView+CGAffineTransform.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		0AC750CA1A2465AF000A7F86 = {
 			isa = PBXGroup;
 			children = (
@@ -232,10 +243,7 @@
 				0AC750E61A2465AF000A7F86 /* AppDelegate.m */,
 				0AC750EB1A2465AF000A7F86 /* ViewController.h */,
 				0AC750EC1A2465AF000A7F86 /* ViewController.m */,
-				0A8F37AE1A353EF10064B30A /* NSMutableArray+QueueAdditions.h */,
-				0A8F37AF1A353EF10064B30A /* NSMutableArray+QueueAdditions.m */,
-				0A8F37BA1A3549A60064B30A /* UIView+CGAffineTransform.h */,
-				0A8F37BB1A3549A60064B30A /* UIView+CGAffineTransform.m */,
+				0A8F37C61A3591100064B30A /* Util */,
 				0A8F37A11A3539B10064B30A /* Plugins */,
 				0A1DA62D1A257C11005926AA /* Config */,
 				0A1DA62C1A257BDA005926AA /* UI */,

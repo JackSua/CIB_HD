@@ -133,7 +133,13 @@ static WebViewPlugin *instance = nil;
 
 -(void)closeView:(NSMutableArray *)arguments
 {
-    
+//    if(arguments != nil){
+//        webViewTag = [arguments pop];
+//        callBackId = [arguments pop];
+//    }
+//    [[HomeViewPlugin shareInstance]unMask:nil];
+//    [self executeMethodByCallBackId];
+    [self close];
 }
 
 -(void)alertViewWithUrl:(NSString *)url
