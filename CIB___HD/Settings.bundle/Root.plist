@@ -14,7 +14,7 @@
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 			<key>DefaultValue</key>
-			<string>http://www.baidu.com</string>
+			<string>http://168.3.27.52:8088/index.html</string>
 			<key>Key</key>
 			<string>url</string>
 			<key>KeyboardType</key>

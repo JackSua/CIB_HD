@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "UIUrlButton.h"
+#import "BasicPlugin.h"
+#import "WebViewPlugin.h"
 
 #define kFilename        @"menuList.txt"
 
@@ -17,6 +19,8 @@
 @end
 
 @implementation ViewController
+
+
 
 - (void)viewDidLoad
 {
@@ -44,10 +48,15 @@
 
     //[self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:CIB_IP]]];
     
-    [self loadHomePage];
+    // 载入首页
+    [self loadHomePage]; // FIXME:暂时注释掉
     
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
     [self.view addSubview:self.activityView];
+    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 200)];
+//    view.backgroundColor = [UIColor redColor];
+//    [self.view insertSubview:view belowSubview:self.activityView];
     
 }
 
@@ -99,13 +108,13 @@
 }
 
 //加载对应webview的网页链接
--(void)loadUrl:(UIWebView *)webview url:(NSString *)url{
-    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
-        [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
-    }else{
-        [webview loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:url]]];
-    }
-}
+//-(void)loadUrl:(UIWebView *)webview url:(NSString *)url{
+//    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
+//        [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
+//    }else{
+//        [webview loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:url]]];
+//    }
+//}
 
 - (NSString *)dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(
@@ -163,7 +172,7 @@
 }
 
 - (IBAction)doBtnLogin:(id)sender {
-    
+    [[BasicPlugin getInstance]executePluginByUrl:@"callfunction://callbackId=WebViewPluginopenViewEvent&className=WebViewPlugin&method=openView&params=http%3A%2F%2Fnews.qq.com%24800%24500&currentPage=rindex.html&tt=1418005658128" tag:0];
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView
@@ -242,7 +251,17 @@
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    NSString *url = [request.URL absoluteString];
+    //NSLog(@"should url = %@ webView.tag = %d",url,webView.tag);
     
+    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
+        //return [self logoutWithAlertWebView:webView url:url];
+    }else if([url hasPrefix:CALLFUNCTION_PREFIX]){
+        //NSLog(@"webView.tag = %d",webView.tag);
+        [[BasicPlugin getInstance]executePluginByUrl:url tag:webView.tag];
+        return NO;
+    }
     
     return YES;
 }
