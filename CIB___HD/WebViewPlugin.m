@@ -10,21 +10,12 @@
 #import "NSMutableArray+QueueAdditions.h"
 #import "UIView+CGAffineTransform.h"
 #import "AppDelegate.h"
+#import "PublicInfo.h"
 
 static WebViewPlugin *instance = nil;
 @implementation WebViewPlugin
 
 @synthesize alertWebView,webContainer;
-
-- (id)init{
-    self = [super init];
-    if(self){
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        mainVC =  (ViewController *)appDelegate.window.rootViewController;
-        
-    }
-    return self;
-}
 
 +(WebViewPlugin *)shareInstance{
     static dispatch_once_t predicate;
@@ -45,8 +36,8 @@ static WebViewPlugin *instance = nil;
     if(arguments!=nil && arguments.count == 1){
         url = [arguments objectAtIndex:0];
     }else{
-//        webViewTag = [arguments pop];
-//        callBackId = [arguments pop];
+        webViewTag = [arguments pop];
+        callBackId = [arguments pop];
         url = [arguments objectAtIndex:0];
         if(arguments.count > 2){
             NSString *xwidth = [arguments objectAtIndex:1];
@@ -62,9 +53,9 @@ static WebViewPlugin *instance = nil;
     UIView *alertVC = [self alertViewWithSize:CGSizeMake(x, y) url:url];
     [mainVC.view insertSubview:alertVC belowSubview:mainVC.activityView];
     
-//    if(arguments!=nil && arguments.count > 2){
-//        [self executeMethodByCallBackId];
-//    }
+    if(arguments!=nil && arguments.count > 2){
+        [self executeMethodByCallBackId:[arguments lastObject]]; //TODO:test
+    }
 }
 
 - (UIView *)alertViewWithSize:(CGSize)size url:(NSString *)url{
@@ -73,10 +64,10 @@ static WebViewPlugin *instance = nil;
     
     //WebView
     alertWebView = [[UIWebView alloc]initWithFrame:CGRectMake(40, 40, size.width, size.height)];
-    //alertWebView.tag = 3;
-//    if (IS_IOS_7 == NO) {
-//        alertWebView.scrollView.bounces = NO;
-//    }
+    alertWebView.tag = 2;
+    if (IS_IOS_7 == NO) {
+        alertWebView.scrollView.bounces = NO;
+    }
     alertWebView.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];
     [alertWebView.layer setMasksToBounds:YES];
     [alertWebView.layer setCornerRadius:12.0];//设置矩形四个圆角半径
@@ -118,6 +109,9 @@ static WebViewPlugin *instance = nil;
 
 - (void)onClose:(id)sender
 {
+    callBackId = @"WebViewPlugincloseViewEvent";
+    webViewTag = @"2";
+    [self executeMethodByCallBackId];
     [self close];
 }
 
@@ -133,18 +127,19 @@ static WebViewPlugin *instance = nil;
 
 -(void)closeView:(NSMutableArray *)arguments
 {
-//    if(arguments != nil){
-//        webViewTag = [arguments pop];
-//        callBackId = [arguments pop];
-//    }
+    if(arguments != nil){
+        webViewTag = [arguments pop];
+        callBackId = [arguments pop];
+    }
 //    [[HomeViewPlugin shareInstance]unMask:nil];
-//    [self executeMethodByCallBackId];
+
+    [self executeMethodByCallBackId:[arguments lastObject]];
     [self close];
 }
 
 -(void)alertViewWithUrl:(NSString *)url
 {
-    
+    [self openView:[NSMutableArray arrayWithObject:url]];
 }
 
 -(BOOL)stringIsEmpty:(NSObject *)tt{

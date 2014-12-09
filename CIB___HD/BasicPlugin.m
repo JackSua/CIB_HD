@@ -53,8 +53,8 @@ static BasicPlugin *instance;
 
         //反射调用有参方法
         NSMutableArray *pp = [NSMutableArray arrayWithCapacity:0];
-//        [pp addObject:[NSString stringWithFormat:@"%d",tag]];
-//        [pp addObject:callBackId];
+        [pp addObject:[NSString stringWithFormat:@"%d",tag]];
+        [pp addObject:callBackId];
         for(NSString *t in params){
             [pp addObject:t];
         }

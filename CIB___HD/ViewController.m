@@ -135,7 +135,7 @@
     // TODO:载入首页
     
 #endif
-    
+    [self webViewChangeRightToLeft];
 }
 
 - (BOOL)loadWebWithSettingKey:(NSString *)strKey
@@ -177,7 +177,7 @@
 
 
 - (IBAction)doBtnLogin:(id)sender {
-    [[BasicPlugin getInstance]executePluginByUrl:@"callfunction://callbackId=WebViewPluginopenViewEvent&className=WebViewPlugin&method=openView&params=http%3A%2F%2Fnews.qq.com%24800%24500&currentPage=rindex.html&tt=1418005658128" tag:0];
+    [[BasicPlugin getInstance]executePluginByUrl:@"callfunction://callbackId=WebViewPluginopenViewEvent&className=WebViewPlugin&method=openView&params=http%3A%2F%2Fnews.qq.com%24800%24500&currentPage=rindex.html&tt=1418005658128" tag:1];
     
     //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006
 }
@@ -260,12 +260,12 @@
 {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     NSString *url = [request.URL absoluteString];
-    //NSLog(@"should url = %@ webView.tag = %d",url,webView.tag);
+    NSLog(@"should url = %@ webView.tag = %d",url,webView.tag);
     
     if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
         //return [self logoutWithAlertWebView:webView url:url];
     }else if([url hasPrefix:CALLFUNCTION_PREFIX]){
-        //NSLog(@"webView.tag = %d",webView.tag);
+        NSLog(@"webView.tag = %d",webView.tag);
         [[BasicPlugin getInstance]executePluginByUrl:url tag:webView.tag];
         return NO;
     }

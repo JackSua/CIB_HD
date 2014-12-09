@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ViewController.h"
+#import "CDVPlugin.h"
 
 #define WebViewPlugin_border_width 40
 #define WebViewPlugin_border_height 80
 
-@interface WebViewPlugin : NSObject{
-    ViewController *mainVC;
+@interface WebViewPlugin : CDVPlugin{
     UIView *webContainer;
     UIView *_background;
     NSString *_url;

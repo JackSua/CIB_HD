@@ -16,6 +16,7 @@
 #define SCREEN_WITH [PublicInfo screenWidth]
 #define SCREEN_HEIGHT [PublicInfo screenHeight]
 #define TIMER_OUT_SECOND 20.0
+#define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES : NO)
 
 + (id)sharedInstance;
 
