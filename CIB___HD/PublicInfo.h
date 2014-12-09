@@ -12,7 +12,7 @@
 
 #define MAIN_WEBVIEW_WIDTH 833
 #define MAIN_WEBVIEW_HEIGHT 654
-#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define SCREEN_WITH [PublicInfo screenWidth]
 #define SCREEN_HEIGHT [PublicInfo screenHeight]
 #define TIMER_OUT_SECOND 20.0

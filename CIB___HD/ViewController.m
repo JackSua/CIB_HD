@@ -181,7 +181,7 @@
     
     //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006
     
-    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];
+    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView

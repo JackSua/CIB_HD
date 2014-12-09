@@ -18,14 +18,16 @@
     UIView *blackView;
     UIView *emptyView;
 }
-@property (nonatomic, copy)NSString *startDateStr;
+@property (nonatomic, copy) NSString *startDateStr;
 @property (nonatomic, copy) NSString *endDateStr;
 @property (nonatomic, strong) UIDatePicker *startDatePicker;
 @property (nonatomic, strong) UIDatePicker *endDatePicker;
-
+@property (nonatomic, copy) NSString *callBackStr;
 
 +(DatePlugin *)shareInstance;
 
--(void)getDate:(NSMutableArray *)arguments;
+-(void)getOneDate:(NSMutableArray *)arguments;
+
+-(void)getTwoDate:(NSMutableArray *)arguments;
 
 @end
