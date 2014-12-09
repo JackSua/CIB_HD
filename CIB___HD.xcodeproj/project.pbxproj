@@ -23,6 +23,8 @@
 		0A1DA65C1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
 		0A6B2EB11A369CC500924D0F /* CDVPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2EB01A369CC500924D0F /* CDVPlugin.m */; };
 		0A6B2EB21A369CC500924D0F /* CDVPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2EB01A369CC500924D0F /* CDVPlugin.m */; };
+		0A6B2EB51A36E35800924D0F /* DatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2EB41A36E35800924D0F /* DatePlugin.m */; };
+		0A6B2EB61A36E35800924D0F /* DatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2EB41A36E35800924D0F /* DatePlugin.m */; };
 		0A6DC0641A2D8C9000F210C3 /* UIUrlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */; };
 		0A6DC0651A2D8C9000F210C3 /* UIUrlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */; };
 		0A72452F1A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
@@ -76,6 +78,8 @@
 		0A1DA65A1A25BE28005926AA /* PublicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicInfo.m; sourceTree = "<group>"; };
 		0A6B2EAF1A369CC500924D0F /* CDVPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVPlugin.h; sourceTree = "<group>"; };
 		0A6B2EB01A369CC500924D0F /* CDVPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVPlugin.m; sourceTree = "<group>"; };
+		0A6B2EB31A36E35800924D0F /* DatePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePlugin.h; sourceTree = "<group>"; };
+		0A6B2EB41A36E35800924D0F /* DatePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePlugin.m; sourceTree = "<group>"; };
 		0A6DC0621A2D8C9000F210C3 /* UIUrlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUrlButton.h; sourceTree = "<group>"; };
 		0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUrlButton.m; sourceTree = "<group>"; };
 		0A72452E1A28524400A0CB81 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				0A8F37B31A3540BA0064B30A /* BasicPlugin.m */,
 				0A8F37B61A3540E20064B30A /* WebViewPlugin.h */,
 				0A8F37B71A3540E20064B30A /* WebViewPlugin.m */,
+				0A6B2EB31A36E35800924D0F /* DatePlugin.h */,
+				0A6B2EB41A36E35800924D0F /* DatePlugin.m */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				0A1DA6431A2582CD005926AA /* ViewController.m in Sources */,
 				0A8F37B11A353EF10064B30A /* NSMutableArray+QueueAdditions.m in Sources */,
 				0A1DA6441A2582CD005926AA /* AppDelegate.m in Sources */,
+				0A6B2EB61A36E35800924D0F /* DatePlugin.m in Sources */,
 				0A6DC0651A2D8C9000F210C3 /* UIUrlButton.m in Sources */,
 				0A8F37B51A3540BA0064B30A /* BasicPlugin.m in Sources */,
 				0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
@@ -430,6 +437,7 @@
 				0AC750ED1A2465AF000A7F86 /* ViewController.m in Sources */,
 				0A8F37B01A353EF10064B30A /* NSMutableArray+QueueAdditions.m in Sources */,
 				0AC750E71A2465AF000A7F86 /* AppDelegate.m in Sources */,
+				0A6B2EB51A36E35800924D0F /* DatePlugin.m in Sources */,
 				0A6DC0641A2D8C9000F210C3 /* UIUrlButton.m in Sources */,
 				0A8F37B41A3540BA0064B30A /* BasicPlugin.m in Sources */,
 				0A1DA6571A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
