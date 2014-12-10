@@ -12,15 +12,16 @@
 #import "BasicPlugin.h"
 #import "WebViewPlugin.h"
 
-#define kFilename        @"menuList.txt"
+#define kFilename @"menuList.txt"
 
 @interface ViewController ()
+{
+    NSString *requestUrlString;
+}
 
 @end
 
 @implementation ViewController
-
-
 
 - (void)viewDidLoad
 {
@@ -35,7 +36,7 @@
 //
 //    if ([NSJSONSerialization isValidJSONObject:dic]) {
 //        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
-//        [data writeToFile:[self dataFilePath] atomically:YES];
+//        [data writeToFile:[self dataFilePath] atomically:YES]; //将json地址写入文件
 //    }
 //    
 //    self.firstMenuArray = [dic objectForKey:@"menuList"];
@@ -90,7 +91,7 @@
 // 三级菜单相应方法
 - (void)doBtnThirdMenu:(UIUrlButton *)sender
 {
-    [self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:sender.urlString]]];
+    [self loadRequestWithWebView:self.mainWebView urlStr:sender.urlString];
     [self webViewChangeRightToLeft];
 }
 
@@ -159,16 +160,17 @@
 
 - (void)loadWebWithStrUrl:(NSString *)strUrl
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults synchronize];
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults synchronize];
 //    BOOL isClear = [defaults objectForKey:@"clearCache"];
 //    if (isClear) {
 //        [[NSURLCache sharedURLCache] removeAllCachedResponses]; // 清空缓存
 //    }
     
-    NSURL *url = [NSURL URLWithString:strUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.mainWebView loadRequest:request];
+//    NSURL *url = [NSURL URLWithString:strUrl];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [self.mainWebView loadRequest:request];
+    [self loadRequestWithWebView:self.mainWebView urlStr:strUrl];
 }
 
 - (IBAction)doBtnHomePage:(id)sender {
@@ -184,11 +186,15 @@
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];
     
     //translationWebFromLeftToRight
-    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
+    //[self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"]]];
+    [self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
+    //[self loadRequestWithWebView:self.mainWebView urlStr:@"http://www.baidu.com"];
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView
 {
+    [webView stopLoading];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"www" ofType:nil];
     NSString *filePath = [path stringByAppendingPathComponent:@"/html/common/error1.html"];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]]];
@@ -260,15 +266,21 @@
     return 0;
 }
 
+- (void)loadRequestWithWebView:(UIWebView *)webView urlStr:(NSString *)urlStr
+{
+    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
+}
+
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    //[[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     NSString *url = [request.URL absoluteString];
     NSLog(@"should url = %@ webView.tag = %d",url,webView.tag);
     
     if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
-        //return [self logoutWithAlertWebView:webView url:url];
+        
     }else if([url hasPrefix:CALLFUNCTION_PREFIX]){
         NSLog(@"webView.tag = %d",webView.tag);
         [[BasicPlugin getInstance]executePluginByUrl:url tag:webView.tag];

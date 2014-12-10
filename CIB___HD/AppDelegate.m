@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "NSURLRequest+IgnoreSSL.h"
 
 @implementation AppDelegate
 

@@ -25,6 +25,6 @@
 
 -(void)executeMethodByCallBackIdString:(NSString *)string;
 
-//-(void)loadUrl:(NSString *)url webview:(UIWebView *)webview;
+-(void)loadUrl:(NSString *)url webview:(UIWebView *)webview;
 
 @end

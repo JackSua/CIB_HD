@@ -24,6 +24,16 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>DefaultValue</key>
+			<string>https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01</string>
+			<key>Title</key>
+			<string></string>
+			<key>Key</key>
+			<string>test</string>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

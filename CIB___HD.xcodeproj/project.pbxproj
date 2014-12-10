@@ -21,8 +21,8 @@
 		0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA6561A25B9EE005926AA /* GetConfigInfoUtil.m */; };
 		0A1DA65B1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
 		0A1DA65C1A25BE28005926AA /* PublicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DA65A1A25BE28005926AA /* PublicInfo.m */; };
-		0A61C3A81A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C3A71A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m */; };
-		0A61C3A91A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C3A71A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m */; };
+		0A2A3B721A382FF700778E11 /* NSURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A3B711A382FF700778E11 /* NSURLRequest.m */; };
+		0A2A3B731A382FF700778E11 /* NSURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A3B711A382FF700778E11 /* NSURLRequest.m */; };
 		0A61C3AC1A37DEAE002F47B1 /* TransformPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C3AB1A37DEAE002F47B1 /* TransformPlugin.m */; };
 		0A61C3AD1A37DEAE002F47B1 /* TransformPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C3AB1A37DEAE002F47B1 /* TransformPlugin.m */; };
 		0A6B2EB11A369CC500924D0F /* CDVPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2EB01A369CC500924D0F /* CDVPlugin.m */; };
@@ -80,8 +80,8 @@
 		0A1DA6561A25B9EE005926AA /* GetConfigInfoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetConfigInfoUtil.m; sourceTree = "<group>"; };
 		0A1DA6591A25BE28005926AA /* PublicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicInfo.h; sourceTree = "<group>"; };
 		0A1DA65A1A25BE28005926AA /* PublicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicInfo.m; sourceTree = "<group>"; };
-		0A61C3A61A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+IgnoreSSL.h"; sourceTree = "<group>"; };
-		0A61C3A71A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+IgnoreSSL.m"; sourceTree = "<group>"; };
+		0A2A3B701A382FF700778E11 /* NSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLRequest.h; sourceTree = "<group>"; };
+		0A2A3B711A382FF700778E11 /* NSURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLRequest.m; sourceTree = "<group>"; };
 		0A61C3AA1A37DEAE002F47B1 /* TransformPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformPlugin.h; sourceTree = "<group>"; };
 		0A61C3AB1A37DEAE002F47B1 /* TransformPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransformPlugin.m; sourceTree = "<group>"; };
 		0A6B2EAF1A369CC500924D0F /* CDVPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVPlugin.h; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 				0A8F37AF1A353EF10064B30A /* NSMutableArray+QueueAdditions.m */,
 				0A8F37BA1A3549A60064B30A /* UIView+CGAffineTransform.h */,
 				0A8F37BB1A3549A60064B30A /* UIView+CGAffineTransform.m */,
-				0A61C3A61A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.h */,
-				0A61C3A71A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m */,
+				0A2A3B701A382FF700778E11 /* NSURLRequest.h */,
+				0A2A3B711A382FF700778E11 /* NSURLRequest.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -424,6 +424,7 @@
 			files = (
 				0A8F37B91A3540E20064B30A /* WebViewPlugin.m in Sources */,
 				0A8F37BD1A3549A60064B30A /* UIView+CGAffineTransform.m in Sources */,
+				0A2A3B731A382FF700778E11 /* NSURLRequest.m in Sources */,
 				0A1DA65C1A25BE28005926AA /* PublicInfo.m in Sources */,
 				0A765BB71A270F1700413927 /* ActivityIndicatorView.m in Sources */,
 				0A1DA6431A2582CD005926AA /* ViewController.m in Sources */,
@@ -434,7 +435,6 @@
 				0A8F37B51A3540BA0064B30A /* BasicPlugin.m in Sources */,
 				0A61C3AD1A37DEAE002F47B1 /* TransformPlugin.m in Sources */,
 				0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
-				0A61C3A91A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m in Sources */,
 				0A6B2EB21A369CC500924D0F /* CDVPlugin.m in Sources */,
 				0A1DA6451A2582CD005926AA /* main.m in Sources */,
 			);
@@ -446,6 +446,7 @@
 			files = (
 				0A8F37B81A3540E20064B30A /* WebViewPlugin.m in Sources */,
 				0A8F37BC1A3549A60064B30A /* UIView+CGAffineTransform.m in Sources */,
+				0A2A3B721A382FF700778E11 /* NSURLRequest.m in Sources */,
 				0A1DA65B1A25BE28005926AA /* PublicInfo.m in Sources */,
 				0A765BB61A270F1700413927 /* ActivityIndicatorView.m in Sources */,
 				0AC750ED1A2465AF000A7F86 /* ViewController.m in Sources */,
@@ -456,7 +457,6 @@
 				0A8F37B41A3540BA0064B30A /* BasicPlugin.m in Sources */,
 				0A61C3AC1A37DEAE002F47B1 /* TransformPlugin.m in Sources */,
 				0A1DA6571A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
-				0A61C3A81A37DC47002F47B1 /* NSURLRequest+IgnoreSSL.m in Sources */,
 				0A6B2EB11A369CC500924D0F /* CDVPlugin.m in Sources */,
 				0AC750E31A2465AF000A7F86 /* main.m in Sources */,
 			);

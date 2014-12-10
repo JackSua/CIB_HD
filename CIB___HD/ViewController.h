@@ -10,12 +10,13 @@
 #import "EnvConstant.h"
 #import "PublicInfo.h"
 #import "ActivityIndicatorView.h"
+#import "NSURLRequest.h"
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate>
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate, NSURLConnectionDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *firstMenuTableView;
 @property (weak, nonatomic) IBOutlet UITableView *secondMenuTableView;
-@property (weak, nonatomic) IBOutlet UIWebView *mainWebView;
+@property (strong, nonatomic) IBOutlet UIWebView *mainWebView;
 @property (weak, nonatomic) IBOutlet UIButton *btnMore;
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 @property (weak, nonatomic) IBOutlet UIView *ThirdMenuView;
