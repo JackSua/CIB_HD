@@ -26,4 +26,16 @@
 @property (strong, nonatomic) NSMutableArray *thirdMenuArray;
 @property (strong, nonatomic) ActivityIndicatorView *activityView;
 
+// 缩小第一级菜单
+- (void)shrinkFirstMenu;
+
+// 放大第一级菜单
+- (void)enlargeFirstMenu;
+
+// 将 webView移动到屏幕中
+- (void)webViewChangeRightToLeft;
+
+// 将 webView 移动到右侧屏幕之外
+- (void)webViewChangeLeftToRight;
+
 @end
