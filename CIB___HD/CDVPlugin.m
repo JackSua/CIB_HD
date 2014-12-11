@@ -59,8 +59,7 @@
 -(void)loadUrl:(NSString *)url webview:(UIWebView *)webview
 {
     webview.delegate = mainVC;
-    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
-    //[webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
 }
 
 @end

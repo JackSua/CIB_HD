@@ -100,13 +100,6 @@ static WebViewPlugin *instance = nil;
     return _background;
 }
 
--(void)loadUrl:(NSString *)url webview:(UIWebView *)webview{
-    webview.delegate = mainVC;
-    //url = [NSString stringWithFormat:@"%@%@",[[InfoCtxUtil sharedInstance]getCtx],url];
-    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
-    //[webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
-}
-
 - (void)onClose:(id)sender
 {
     callBackId = @"WebViewPlugincloseViewEvent";
@@ -131,7 +124,6 @@ static WebViewPlugin *instance = nil;
         webViewTag = [arguments pop];
         callBackId = [arguments pop];
     }
-//    [[HomeViewPlugin shareInstance]unMask:nil];
 
     [self executeMethodByCallBackId:[arguments lastObject]];
     [self close];

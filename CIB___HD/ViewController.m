@@ -31,34 +31,27 @@
     
     [self.firstMenuTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self.secondMenuTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+/*
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"MenuList" withExtension:@"plist"]];
 
-//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"MenuList" withExtension:@"plist"]];
-//
-//    if ([NSJSONSerialization isValidJSONObject:dic]) {
-//        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
-//        [data writeToFile:[self dataFilePath] atomically:YES]; //将json地址写入文件
-//    }
-//    
-//    self.firstMenuArray = [dic objectForKey:@"menuList"];
-//    if (self.secondMenuArray.count == 0) {
-//        self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
-//    }
-//    if (self.thirdMenuArray.count == 0) {
-//        self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
-//    }
-
-    //[self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:CIB_IP]]];
+    if ([NSJSONSerialization isValidJSONObject:dic]) {
+        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+        [data writeToFile:[self dataFilePath] atomically:YES]; //将json地址写入文件
+    }
     
-    // 载入首页
-    [self loadHomePage]; // FIXME:暂时注释掉
-    
+    self.firstMenuArray = [dic objectForKey:@"menuList"];
+    if (self.secondMenuArray.count == 0) {
+        self.secondMenuArray = [[self.firstMenuArray objectAtIndex:0] valueForKey:@"child"];
+    }
+    if (self.thirdMenuArray.count == 0) {
+        self.thirdMenuArray = [[self.secondMenuArray objectAtIndex:0] valueForKey:@"child"];
+    }
+*/
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
     [self.view addSubview:self.activityView];
     
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 200)];
-//    view.backgroundColor = [UIColor redColor];
-//    [self.view insertSubview:view belowSubview:self.activityView];
-    
+    // 载入首页
+    [self loadHomePage]; 
 }
 
 // 创建三级菜单
@@ -160,16 +153,14 @@
 
 - (void)loadWebWithStrUrl:(NSString *)strUrl
 {
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults synchronize];
-//    BOOL isClear = [defaults objectForKey:@"clearCache"];
-//    if (isClear) {
-//        [[NSURLCache sharedURLCache] removeAllCachedResponses]; // 清空缓存
-//    }
-    
-//    NSURL *url = [NSURL URLWithString:strUrl];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [self.mainWebView loadRequest:request];
+    /*
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults synchronize];
+    BOOL isClear = [defaults objectForKey:@"clearCache"];
+    if (isClear) {
+        [[NSURLCache sharedURLCache] removeAllCachedResponses]; // 清空缓存
+    }*/
+
     [self loadRequestWithWebView:self.mainWebView urlStr:strUrl];
 }
 
@@ -181,15 +172,14 @@
 - (IBAction)doBtnLogin:(id)sender {
     //[[BasicPlugin getInstance]executePluginByUrl:@"callfunction://callbackId=WebViewPluginopenViewEvent&className=WebViewPlugin&method=openView&params=http%3A%2F%2Fnews.qq.com%24800%24500&currentPage=rindex.html&tt=1418005658128" tag:1]; // 打开网页弹窗
     
-    //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006
+    //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006   //关闭弹窗
     
-    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];  //获取单个日期
     
-    //translationWebFromLeftToRight
+    // 平移动画, 从左到右
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
-    //[self.mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"]]];
+
     [self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
-    //[self loadRequestWithWebView:self.mainWebView urlStr:@"http://www.baidu.com"];
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView
@@ -198,6 +188,11 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"www" ofType:nil];
     NSString *filePath = [path stringByAppendingPathComponent:@"/html/common/error1.html"];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]]];
+}
+
+- (void)loadRequestWithWebView:(UIWebView *)webView urlStr:(NSString *)urlStr
+{
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
 }
 
 #pragma mark - UITableViewDataSource
@@ -266,23 +261,17 @@
     return 0;
 }
 
-- (void)loadRequestWithWebView:(UIWebView *)webView urlStr:(NSString *)urlStr
-{
-    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMER_OUT_SECOND]];
-}
-
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     //[[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     NSString *url = [request.URL absoluteString];
-    NSLog(@"should url = %@ webView.tag = %d",url,webView.tag);
+    NSLog(@"should url = %@ webView.tag = %ld",url,webView.tag);
     
     if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"]) {
         
     }else if([url hasPrefix:CALLFUNCTION_PREFIX]){
-        NSLog(@"webView.tag = %d",webView.tag);
+        NSLog(@"webView.tag = %ld",webView.tag);
         [[BasicPlugin getInstance]executePluginByUrl:url tag:webView.tag];
         return NO;
     }

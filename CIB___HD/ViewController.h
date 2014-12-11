@@ -12,7 +12,7 @@
 #import "ActivityIndicatorView.h"
 #import "NSURLRequest.h"
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate, NSURLConnectionDelegate>
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *firstMenuTableView;
 @property (weak, nonatomic) IBOutlet UITableView *secondMenuTableView;
