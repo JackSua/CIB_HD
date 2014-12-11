@@ -12,6 +12,10 @@
 
 +(TransformPlugin *)shareInstance;
 
+- (void)changeLoginBtnTitle:(NSMutableArray *)arguments;
+
 - (void)translationWebFromLeftToRight:(NSMutableArray *)arguments;
+
+- (void)translationWebFromRightToLeft:(NSMutableArray *)arguments;
 
 @end

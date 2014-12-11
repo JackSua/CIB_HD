@@ -25,6 +25,26 @@ static TransformPlugin *instance = nil;
     return [TransformPlugin shareInstance];
 }
 
+- (void)changeLoginBtnTitle:(NSMutableArray *)arguments
+{
+    if (arguments!=nil && arguments.count !=0) {
+        webViewTag = [arguments pop];
+        callBackId = [arguments pop];
+        NSString *str = [arguments pop];
+        if (str&& ![str isEqualToString:@""] && str.length != 0) {
+            if ([str isEqualToString:@"logined"]) {
+                [mainVC.btnLogin setTitle:@"注销" forState:UIControlStateNormal];
+            }else if ([str isEqualToString:@"loginOut"]){
+                [mainVC.btnLogin setTitle:@"登录" forState:UIControlStateNormal];
+            }
+        }
+        NSInteger tagN = [[arguments pop] intValue];
+
+        mainVC.btnLogin.tag = tagN;
+    }
+    [self executeMethodByCallBackId];
+}
+
 - (void)translationWebFromLeftToRight:(NSMutableArray *)arguments
 {
     [mainVC webViewChangeLeftToRight];

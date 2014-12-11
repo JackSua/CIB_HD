@@ -49,7 +49,6 @@
 */
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
     [self.view addSubview:self.activityView];
-    
     // 载入首页
     [self loadHomePage]; 
 }
@@ -178,8 +177,16 @@
     
     // 平移动画, 从左到右
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
-
-    [self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
+    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=logined$1" tag:1];
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=loginOut$0" tag:0];
+    //changeLoginBtnTitle
+    //[self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
+    
+    if (((UIButton *)sender).tag == 0) {
+        // 未登录
+    }else{
+        // 已登录
+    }
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView
