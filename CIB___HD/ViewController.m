@@ -11,13 +11,11 @@
 #import "UIUrlButton.h"
 #import "BasicPlugin.h"
 #import "WebViewPlugin.h"
+#import "MYIntroductionView.h"
 
 #define kFilename @"menuList.txt"
 
-@interface ViewController ()
-{
-    NSString *requestUrlString;
-}
+@interface ViewController ()<MYIntroductionDelegate>
 
 @end
 
@@ -51,6 +49,34 @@
     [self.view addSubview:self.activityView];
     // 载入首页
     [self loadHomePage]; 
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    NSUserDefaults * settings1 = [NSUserDefaults standardUserDefaults];
+    NSString *key1 = [NSString stringWithFormat:@"is_first"];
+    NSString *value = [settings1 objectForKey:key1];
+
+    if (!value){
+    
+    // 启动页
+        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"intro1.jpg"] description:@"Welcome to MYIntroductionView, your 100 percent customizable interface for introductions and tutorials! Simply add a few classes to your project, and you are ready to go!"];
+    
+        MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"intro2.jpg"] description:@"MYIntroductionView is your ticket to a great tutorial or introduction!"];
+        
+        MYIntroductionPanel *panel3 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"intro3.jpg"] description:@"MYIntroductionView is your ticket to a great tutorial or introduction!"];
+    
+        MYIntroductionView *introductionView = [[MYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT+20) panels:@[panel, panel2, panel3]];
+    
+        introductionView.delegate = self;
+    
+        [introductionView showInView:self.view];
+        
+        NSUserDefaults * setting = [NSUserDefaults standardUserDefaults];
+        NSString * key = [NSString stringWithFormat:@"is_first"];
+        [setting setObject:[NSString stringWithFormat:@"false"] forKey:key];
+        [setting synchronize];
+    }
 }
 
 // 创建三级菜单

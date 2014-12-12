@@ -31,6 +31,14 @@
 		0A6B2EB61A36E35800924D0F /* DatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2EB41A36E35800924D0F /* DatePlugin.m */; };
 		0A6DC0641A2D8C9000F210C3 /* UIUrlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */; };
 		0A6DC0651A2D8C9000F210C3 /* UIUrlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */; };
+		0A70904B1A39877700558E04 /* intro1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A7090481A39877700558E04 /* intro1.jpg */; };
+		0A70904C1A39877700558E04 /* intro1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A7090481A39877700558E04 /* intro1.jpg */; };
+		0A70904D1A39877700558E04 /* intro2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A7090491A39877700558E04 /* intro2.jpg */; };
+		0A70904E1A39877700558E04 /* intro2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A7090491A39877700558E04 /* intro2.jpg */; };
+		0A70904F1A39877700558E04 /* intro3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A70904A1A39877700558E04 /* intro3.jpg */; };
+		0A7090501A39877700558E04 /* intro3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A70904A1A39877700558E04 /* intro3.jpg */; };
+		0A7090531A3990BC00558E04 /* JXIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7090521A3990BC00558E04 /* JXIntroductionView.m */; };
+		0A7090541A3990BC00558E04 /* JXIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7090521A3990BC00558E04 /* JXIntroductionView.m */; };
 		0A72452F1A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
 		0A7245301A28524400A0CB81 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 0A72452E1A28524400A0CB81 /* www */; };
 		0A765BB21A26CA3300413927 /* MenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A765BB11A26CA3300413927 /* MenuList.plist */; };
@@ -45,6 +53,10 @@
 		0A8F37B91A3540E20064B30A /* WebViewPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F37B71A3540E20064B30A /* WebViewPlugin.m */; };
 		0A8F37BC1A3549A60064B30A /* UIView+CGAffineTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F37BB1A3549A60064B30A /* UIView+CGAffineTransform.m */; };
 		0A8F37BD1A3549A60064B30A /* UIView+CGAffineTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F37BB1A3549A60064B30A /* UIView+CGAffineTransform.m */; };
+		0AA125CD1A3ADDB600290D64 /* MYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA125CA1A3ADDB600290D64 /* MYIntroductionView.m */; };
+		0AA125CE1A3ADDB600290D64 /* MYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA125CA1A3ADDB600290D64 /* MYIntroductionView.m */; };
+		0AA125D31A3ADE5300290D64 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA125D21A3ADE5300290D64 /* MYIntroductionPanel.m */; };
+		0AA125D41A3ADE5300290D64 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA125D21A3ADE5300290D64 /* MYIntroductionPanel.m */; };
 		0AC750D71A2465AF000A7F86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC750D61A2465AF000A7F86 /* Foundation.framework */; };
 		0AC750D91A2465AF000A7F86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC750D81A2465AF000A7F86 /* CoreGraphics.framework */; };
 		0AC750DB1A2465AF000A7F86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC750DA1A2465AF000A7F86 /* UIKit.framework */; };
@@ -90,6 +102,11 @@
 		0A6B2EB41A36E35800924D0F /* DatePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePlugin.m; sourceTree = "<group>"; };
 		0A6DC0621A2D8C9000F210C3 /* UIUrlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUrlButton.h; sourceTree = "<group>"; };
 		0A6DC0631A2D8C9000F210C3 /* UIUrlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUrlButton.m; sourceTree = "<group>"; };
+		0A7090481A39877700558E04 /* intro1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro1.jpg; sourceTree = "<group>"; };
+		0A7090491A39877700558E04 /* intro2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro2.jpg; sourceTree = "<group>"; };
+		0A70904A1A39877700558E04 /* intro3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro3.jpg; sourceTree = "<group>"; };
+		0A7090511A3990BC00558E04 /* JXIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXIntroductionView.h; sourceTree = "<group>"; };
+		0A7090521A3990BC00558E04 /* JXIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXIntroductionView.m; sourceTree = "<group>"; };
 		0A72452E1A28524400A0CB81 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		0A765BB11A26CA3300413927 /* MenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuList.plist; sourceTree = "<group>"; };
 		0A765BB41A270F1700413927 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
@@ -102,6 +119,10 @@
 		0A8F37B71A3540E20064B30A /* WebViewPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewPlugin.m; sourceTree = "<group>"; };
 		0A8F37BA1A3549A60064B30A /* UIView+CGAffineTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CGAffineTransform.h"; sourceTree = "<group>"; };
 		0A8F37BB1A3549A60064B30A /* UIView+CGAffineTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGAffineTransform.m"; sourceTree = "<group>"; };
+		0AA125C91A3ADDB600290D64 /* MYIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionView.h; sourceTree = "<group>"; };
+		0AA125CA1A3ADDB600290D64 /* MYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionView.m; sourceTree = "<group>"; };
+		0AA125D11A3ADE5300290D64 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		0AA125D21A3ADE5300290D64 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
 		0AC750D31A2465AF000A7F86 /* CIB___HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIB___HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC750D61A2465AF000A7F86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0AC750D81A2465AF000A7F86 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +181,9 @@
 		0A1DA62C1A257BDA005926AA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0A7090481A39877700558E04 /* intro1.jpg */,
+				0A7090491A39877700558E04 /* intro2.jpg */,
+				0A70904A1A39877700558E04 /* intro3.jpg */,
 				0AC750E81A2465AF000A7F86 /* Main.storyboard */,
 				0AC750EE1A2465AF000A7F86 /* Images.xcassets */,
 				0A765BB41A270F1700413927 /* ActivityIndicatorView.h */,
@@ -182,6 +206,19 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		0A70903F1A39839000558E04 /* JXIntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				0AA125D11A3ADE5300290D64 /* MYIntroductionPanel.h */,
+				0AA125D21A3ADE5300290D64 /* MYIntroductionPanel.m */,
+				0AA125C91A3ADDB600290D64 /* MYIntroductionView.h */,
+				0AA125CA1A3ADDB600290D64 /* MYIntroductionView.m */,
+				0A7090511A3990BC00558E04 /* JXIntroductionView.h */,
+				0A7090521A3990BC00558E04 /* JXIntroductionView.m */,
+			);
+			path = JXIntroductionView;
+			sourceTree = "<group>";
+		};
 		0A8F37A11A3539B10064B30A /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +239,7 @@
 		0A8F37C61A3591100064B30A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				0A70903F1A39839000558E04 /* JXIntroductionView */,
 				0A8F37AE1A353EF10064B30A /* NSMutableArray+QueueAdditions.h */,
 				0A8F37AF1A353EF10064B30A /* NSMutableArray+QueueAdditions.m */,
 				0A8F37BA1A3549A60064B30A /* UIView+CGAffineTransform.h */,
@@ -391,7 +429,10 @@
 				0A1DA6531A2583E6005926AA /* Settings.bundle in Resources */,
 				0A1DA64B1A2582CD005926AA /* Images.xcassets in Resources */,
 				0A1DA64C1A2582CD005926AA /* InfoPlist.strings in Resources */,
+				0A7090501A39877700558E04 /* intro3.jpg in Resources */,
 				0A1DA64D1A2582CD005926AA /* Main.storyboard in Resources */,
+				0A70904C1A39877700558E04 /* intro1.jpg in Resources */,
+				0A70904E1A39877700558E04 /* intro2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +440,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A70904F1A39877700558E04 /* intro3.jpg in Resources */,
 				0A72452F1A28524400A0CB81 /* www in Resources */,
 				0AC750EF1A2465AF000A7F86 /* Images.xcassets in Resources */,
 				0AC750E11A2465AF000A7F86 /* InfoPlist.strings in Resources */,
 				0A765BB21A26CA3300413927 /* MenuList.plist in Resources */,
+				0A70904B1A39877700558E04 /* intro1.jpg in Resources */,
+				0A70904D1A39877700558E04 /* intro2.jpg in Resources */,
 				0AC750EA1A2465AF000A7F86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA125D41A3ADE5300290D64 /* MYIntroductionPanel.m in Sources */,
 				0A8F37B91A3540E20064B30A /* WebViewPlugin.m in Sources */,
 				0A8F37BD1A3549A60064B30A /* UIView+CGAffineTransform.m in Sources */,
 				0A2A3B731A382FF700778E11 /* NSURLRequest.m in Sources */,
@@ -429,6 +474,7 @@
 				0A765BB71A270F1700413927 /* ActivityIndicatorView.m in Sources */,
 				0A1DA6431A2582CD005926AA /* ViewController.m in Sources */,
 				0A8F37B11A353EF10064B30A /* NSMutableArray+QueueAdditions.m in Sources */,
+				0AA125CE1A3ADDB600290D64 /* MYIntroductionView.m in Sources */,
 				0A1DA6441A2582CD005926AA /* AppDelegate.m in Sources */,
 				0A6B2EB61A36E35800924D0F /* DatePlugin.m in Sources */,
 				0A6DC0651A2D8C9000F210C3 /* UIUrlButton.m in Sources */,
@@ -436,6 +482,7 @@
 				0A61C3AD1A37DEAE002F47B1 /* TransformPlugin.m in Sources */,
 				0A1DA6581A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
 				0A6B2EB21A369CC500924D0F /* CDVPlugin.m in Sources */,
+				0A7090541A3990BC00558E04 /* JXIntroductionView.m in Sources */,
 				0A1DA6451A2582CD005926AA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA125D31A3ADE5300290D64 /* MYIntroductionPanel.m in Sources */,
 				0A8F37B81A3540E20064B30A /* WebViewPlugin.m in Sources */,
 				0A8F37BC1A3549A60064B30A /* UIView+CGAffineTransform.m in Sources */,
 				0A2A3B721A382FF700778E11 /* NSURLRequest.m in Sources */,
@@ -451,6 +499,7 @@
 				0A765BB61A270F1700413927 /* ActivityIndicatorView.m in Sources */,
 				0AC750ED1A2465AF000A7F86 /* ViewController.m in Sources */,
 				0A8F37B01A353EF10064B30A /* NSMutableArray+QueueAdditions.m in Sources */,
+				0AA125CD1A3ADDB600290D64 /* MYIntroductionView.m in Sources */,
 				0AC750E71A2465AF000A7F86 /* AppDelegate.m in Sources */,
 				0A6B2EB51A36E35800924D0F /* DatePlugin.m in Sources */,
 				0A6DC0641A2D8C9000F210C3 /* UIUrlButton.m in Sources */,
@@ -458,6 +507,7 @@
 				0A61C3AC1A37DEAE002F47B1 /* TransformPlugin.m in Sources */,
 				0A1DA6571A25B9EE005926AA /* GetConfigInfoUtil.m in Sources */,
 				0A6B2EB11A369CC500924D0F /* CDVPlugin.m in Sources */,
+				0A7090531A3990BC00558E04 /* JXIntroductionView.m in Sources */,
 				0AC750E31A2465AF000A7F86 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
