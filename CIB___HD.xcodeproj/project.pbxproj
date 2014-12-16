@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0478F91A3FD10B0004EC06 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0478F81A3FD10B0004EC06 /* POIAnnotation.m */; };
+		0A0478FA1A3FD10B0004EC06 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0478F81A3FD10B0004EC06 /* POIAnnotation.m */; };
+		0A19189F1A3EBFCC002A942D /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19189E1A3EBFCC002A942D /* MAMapKit.framework */; };
+		0A1918A01A3EBFCC002A942D /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19189E1A3EBFCC002A942D /* MAMapKit.framework */; };
+		0A1918A21A3EC03B002A942D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918A11A3EC03B002A942D /* QuartzCore.framework */; };
+		0A1918A41A3EC042002A942D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918A31A3EC042002A942D /* CoreLocation.framework */; };
+		0A1918A61A3EC07E002A942D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918A51A3EC07E002A942D /* SystemConfiguration.framework */; };
+		0A1918A81A3EC08B002A942D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918A71A3EC08B002A942D /* CoreTelephony.framework */; };
+		0A1918AA1A3EC093002A942D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918A91A3EC093002A942D /* libz.dylib */; };
+		0A1918AC1A3EC09A002A942D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918AB1A3EC09A002A942D /* OpenGLES.framework */; };
+		0A1918AE1A3EC0A3002A942D /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918AD1A3EC0A3002A942D /* libstdc++.6.0.9.dylib */; };
+		0A1918B01A3EC0A9002A942D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918AF1A3EC0A9002A942D /* Security.framework */; };
+		0A1918B21A3EC0ED002A942D /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A1918B11A3EC0ED002A942D /* AMap.bundle */; };
+		0A1918B31A3EC0ED002A942D /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A1918B11A3EC0ED002A942D /* AMap.bundle */; };
+		0A1918B51A3EC1ED002A942D /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1918B41A3EC1ED002A942D /* AMapSearchKit.framework */; };
 		0A1DA6431A2582CD005926AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC750EC1A2465AF000A7F86 /* ViewController.m */; };
 		0A1DA6441A2582CD005926AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC750E61A2465AF000A7F86 /* AppDelegate.m */; };
 		0A1DA6451A2582CD005926AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC750E21A2465AF000A7F86 /* main.m */; };
@@ -84,6 +99,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0478F71A3FD10B0004EC06 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIAnnotation.h; sourceTree = "<group>"; };
+		0A0478F81A3FD10B0004EC06 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIAnnotation.m; sourceTree = "<group>"; };
+		0A19189C1A3E84DE002A942D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A19189E1A3EBFCC002A942D /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		0A1918A11A3EC03B002A942D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0A1918A31A3EC042002A942D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A1918A51A3EC07E002A942D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0A1918A71A3EC08B002A942D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0A1918A91A3EC093002A942D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0A1918AB1A3EC09A002A942D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		0A1918AD1A3EC0A3002A942D /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		0A1918AF1A3EC0A9002A942D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0A1918B11A3EC0ED002A942D /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		0A1918B41A3EC1ED002A942D /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = ../../AMap_iOS_API_V2/AMapSearchKit.framework; sourceTree = "<group>"; };
 		0A1DA6291A256C60005926AA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0A1DA62B1A257BA8005926AA /* EnvConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvConstant.h; sourceTree = "<group>"; };
 		0A1DA6511A2582CD005926AA /* CIB___HD 测试版.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIB___HD 测试版.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +178,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1918B51A3EC1ED002A942D /* AMapSearchKit.framework in Frameworks */,
+				0A1918B01A3EC0A9002A942D /* Security.framework in Frameworks */,
+				0A1918AE1A3EC0A3002A942D /* libstdc++.6.0.9.dylib in Frameworks */,
+				0A1918AC1A3EC09A002A942D /* OpenGLES.framework in Frameworks */,
+				0A1918AA1A3EC093002A942D /* libz.dylib in Frameworks */,
+				0A1918A81A3EC08B002A942D /* CoreTelephony.framework in Frameworks */,
+				0A1918A61A3EC07E002A942D /* SystemConfiguration.framework in Frameworks */,
+				0A1918A41A3EC042002A942D /* CoreLocation.framework in Frameworks */,
+				0A1918A21A3EC03B002A942D /* QuartzCore.framework in Frameworks */,
+				0A1918A01A3EBFCC002A942D /* MAMapKit.framework in Frameworks */,
 				0A1DA6471A2582CD005926AA /* CoreGraphics.framework in Frameworks */,
 				0A1DA6481A2582CD005926AA /* UIKit.framework in Frameworks */,
 				0A1DA6491A2582CD005926AA /* Foundation.framework in Frameworks */,
@@ -161,6 +200,7 @@
 			files = (
 				0AC750D91A2465AF000A7F86 /* CoreGraphics.framework in Frameworks */,
 				0AC750DB1A2465AF000A7F86 /* UIKit.framework in Frameworks */,
+				0A19189F1A3EBFCC002A942D /* MAMapKit.framework in Frameworks */,
 				0AC750D71A2465AF000A7F86 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +313,17 @@
 		0AC750D51A2465AF000A7F86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A1918B41A3EC1ED002A942D /* AMapSearchKit.framework */,
+				0A1918AF1A3EC0A9002A942D /* Security.framework */,
+				0A1918AD1A3EC0A3002A942D /* libstdc++.6.0.9.dylib */,
+				0A1918AB1A3EC09A002A942D /* OpenGLES.framework */,
+				0A1918A91A3EC093002A942D /* libz.dylib */,
+				0A1918A71A3EC08B002A942D /* CoreTelephony.framework */,
+				0A1918A51A3EC07E002A942D /* SystemConfiguration.framework */,
+				0A1918A31A3EC042002A942D /* CoreLocation.framework */,
+				0A1918A11A3EC03B002A942D /* QuartzCore.framework */,
+				0A19189E1A3EBFCC002A942D /* MAMapKit.framework */,
+				0A19189C1A3E84DE002A942D /* MapKit.framework */,
 				0AC750D61A2465AF000A7F86 /* Foundation.framework */,
 				0AC750D81A2465AF000A7F86 /* CoreGraphics.framework */,
 				0AC750DA1A2465AF000A7F86 /* UIKit.framework */,
@@ -284,11 +335,14 @@
 		0AC750DC1A2465AF000A7F86 /* CIB___HD */ = {
 			isa = PBXGroup;
 			children = (
+				0A1918B11A3EC0ED002A942D /* AMap.bundle */,
 				0A72452E1A28524400A0CB81 /* www */,
 				0AC750E51A2465AF000A7F86 /* AppDelegate.h */,
 				0AC750E61A2465AF000A7F86 /* AppDelegate.m */,
 				0AC750EB1A2465AF000A7F86 /* ViewController.h */,
 				0AC750EC1A2465AF000A7F86 /* ViewController.m */,
+				0A0478F71A3FD10B0004EC06 /* POIAnnotation.h */,
+				0A0478F81A3FD10B0004EC06 /* POIAnnotation.m */,
 				0A8F37C61A3591100064B30A /* Util */,
 				0A8F37A11A3539B10064B30A /* Plugins */,
 				0A1DA62D1A257C11005926AA /* Config */,
@@ -424,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1918B31A3EC0ED002A942D /* AMap.bundle in Resources */,
 				0A765BB31A26CA3300413927 /* MenuList.plist in Resources */,
 				0A7245301A28524400A0CB81 /* www in Resources */,
 				0A1DA6531A2583E6005926AA /* Settings.bundle in Resources */,
@@ -440,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1918B21A3EC0ED002A942D /* AMap.bundle in Resources */,
 				0A70904F1A39877700558E04 /* intro3.jpg in Resources */,
 				0A72452F1A28524400A0CB81 /* www in Resources */,
 				0AC750EF1A2465AF000A7F86 /* Images.xcassets in Resources */,
@@ -472,6 +528,7 @@
 				0A2A3B731A382FF700778E11 /* NSURLRequest.m in Sources */,
 				0A1DA65C1A25BE28005926AA /* PublicInfo.m in Sources */,
 				0A765BB71A270F1700413927 /* ActivityIndicatorView.m in Sources */,
+				0A0478FA1A3FD10B0004EC06 /* POIAnnotation.m in Sources */,
 				0A1DA6431A2582CD005926AA /* ViewController.m in Sources */,
 				0A8F37B11A353EF10064B30A /* NSMutableArray+QueueAdditions.m in Sources */,
 				0AA125CE1A3ADDB600290D64 /* MYIntroductionView.m in Sources */,
@@ -497,6 +554,7 @@
 				0A2A3B721A382FF700778E11 /* NSURLRequest.m in Sources */,
 				0A1DA65B1A25BE28005926AA /* PublicInfo.m in Sources */,
 				0A765BB61A270F1700413927 /* ActivityIndicatorView.m in Sources */,
+				0A0478F91A3FD10B0004EC06 /* POIAnnotation.m in Sources */,
 				0AC750ED1A2465AF000A7F86 /* ViewController.m in Sources */,
 				0A8F37B01A353EF10064B30A /* NSMutableArray+QueueAdditions.m in Sources */,
 				0AA125CD1A3ADDB600290D64 /* MYIntroductionView.m in Sources */,
@@ -564,6 +622,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Development: RuiBin Huang (FLLZNU9NP5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/dvlp/Desktop/AMap_iOS_API_V2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIB___HD/CIB___HD-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -572,6 +635,7 @@
 				);
 				INFOPLIST_FILE = "CIB___HD test-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "CIB___HD 测试版";
 				PROVISIONING_PROFILE = "cbb5c4cb-e2a3-489a-83bd-164ac4894638";
 				WRAPPER_EXTENSION = app;
@@ -584,11 +648,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Development: RuiBin Huang (FLLZNU9NP5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/dvlp/Desktop/AMap_iOS_API_V2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIB___HD/CIB___HD-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEVELOPMENT=1";
 				INFOPLIST_FILE = "CIB___HD test-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "CIB___HD 测试版";
 				PROVISIONING_PROFILE = "cbb5c4cb-e2a3-489a-83bd-164ac4894638";
 				WRAPPER_EXTENSION = app;
@@ -673,6 +743,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Development: RuiBin Huang (FLLZNU9NP5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIB___HD/CIB___HD-Prefix.pch";
 				INFOPLIST_FILE = "CIB___HD/CIB___HD-Info.plist";
@@ -689,6 +763,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Development: RuiBin Huang (FLLZNU9NP5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIB___HD/CIB___HD-Prefix.pch";
 				INFOPLIST_FILE = "CIB___HD/CIB___HD-Info.plist";

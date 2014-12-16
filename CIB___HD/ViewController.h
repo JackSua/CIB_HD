@@ -11,8 +11,10 @@
 #import "PublicInfo.h"
 #import "ActivityIndicatorView.h"
 #import "NSURLRequest.h"
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchAPI.h>
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate>
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate, MAMapViewDelegate, AMapSearchDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *firstMenuTableView;
 @property (weak, nonatomic) IBOutlet UITableView *secondMenuTableView;
@@ -26,6 +28,10 @@
 @property (strong, nonatomic) NSMutableArray *secondMenuArray;
 @property (strong, nonatomic) NSMutableArray *thirdMenuArray;
 @property (strong, nonatomic) ActivityIndicatorView *activityView;
+@property (strong, nonatomic) MAMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *mapBackView;
+@property (strong, nonatomic) AMapSearchAPI *searchMap;
+@property (strong, nonatomic) NSMutableArray *annotations;
 
 // 缩小第一级菜单
 - (void)shrinkFirstMenu;

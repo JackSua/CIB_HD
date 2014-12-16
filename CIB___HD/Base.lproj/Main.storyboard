@@ -141,6 +141,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="IbX-Fj-JId"/>
                                 </connections>
                             </webView>
+                            <view contentMode="scaleToFill" id="cMa-CQ-qV3">
+                                <rect key="frame" x="191" y="69" width="833" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -151,6 +156,7 @@
                         <outlet property="btnMore" destination="hcJ-1O-WKr" id="AIM-oR-Gux"/>
                         <outlet property="firstMenuTableView" destination="WPs-q9-4i5" id="XzM-VV-oPa"/>
                         <outlet property="mainWebView" destination="JWF-dL-Hyl" id="mFX-N4-Xpr"/>
+                        <outlet property="mapBackView" destination="cMa-CQ-qV3" id="GHY-Gx-K8x"/>
                         <outlet property="secondMenuTableView" destination="po0-c5-kcU" id="rcw-eS-vkH"/>
                     </connections>
                 </viewController>

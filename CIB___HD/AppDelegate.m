@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <MAMapKit/MAMapKit.h>
 
 @implementation AppDelegate
 
@@ -33,7 +34,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    [MAMapServices sharedServices].apiKey = @"57ac3b92223c1c1c3464c39545bc15ec";
 #ifdef DEVELOPMENT
     [self registerDefaultsFromSettingsBundle];
 #endif

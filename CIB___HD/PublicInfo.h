@@ -15,7 +15,7 @@
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define SCREEN_WITH [PublicInfo screenWidth]
 #define SCREEN_HEIGHT [PublicInfo screenHeight]
-#define TIMER_OUT_SECOND 15.0
+#define TIMER_OUT_SECOND 5.0
 #define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES : NO)
 
 + (id)sharedInstance;

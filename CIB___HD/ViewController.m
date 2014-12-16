@@ -12,6 +12,7 @@
 #import "BasicPlugin.h"
 #import "WebViewPlugin.h"
 #import "MYIntroductionView.h"
+#import "POIAnnotation.h"
 
 #define kFilename @"menuList.txt"
 
@@ -48,7 +49,33 @@
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
     [self.view addSubview:self.activityView];
     // 载入首页
-    [self loadHomePage]; 
+    //[self loadHomePage];
+    
+    [self configMapView];
+}
+
+- (void)configMapView
+{
+    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, self.mapBackView.frame.size.width, self.mapBackView.frame.size.height)];
+    self.mapView.delegate = self;
+    self.mapView.mapType = MAMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
+    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+    [self.mapView setZoomLevel:15 animated:YES];
+    [self.mapBackView addSubview:self.mapView];
+    
+    self.searchMap = [[AMapSearchAPI alloc] initWithSearchKey:@"57ac3b92223c1c1c3464c39545bc15ec" Delegate:self];
+    
+}
+
+- (void)searchPlaceByAroundWithLocation:(AMapGeoPoint *)location
+{
+    AMapPlaceSearchRequest *poiRequest = [[AMapPlaceSearchRequest alloc] init];
+    poiRequest.searchType = AMapSearchType_PlaceAround;
+    poiRequest.location = location;
+    poiRequest.keywords = @"兴业银行";
+    poiRequest.radius = 2000;
+    [self.searchMap AMapPlaceSearch:poiRequest];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -59,7 +86,7 @@
 
     if (!value){
     
-    // 启动页
+    // 引导页
         MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"intro1.jpg"] description:@"Welcome to MYIntroductionView, your 100 percent customizable interface for introductions and tutorials! Simply add a few classes to your project, and you are ready to go!"];
     
         MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"intro2.jpg"] description:@"MYIntroductionView is your ticket to a great tutorial or introduction!"];
@@ -199,12 +226,12 @@
     
     //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006   //关闭弹窗
     
-    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];  //获取单个日期
+    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];  //获取单个日期
     
     // 平移动画, 从左到右
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
-    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=logined$1" tag:1];
-    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=loginOut$0" tag:0];
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=logined$1" tag:1];
+    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=loginOut$0" tag:0];
     //changeLoginBtnTitle
     //[self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
     
@@ -459,6 +486,50 @@
     [UIView animateWithDuration:0.5 animations:^{
         [self.mainWebView setFrame:CGRectMake([PublicInfo screenWidth], 69, MAIN_WEBVIEW_WIDTH, MAIN_WEBVIEW_HEIGHT)];
     }];
+}
+
+
+
+#pragma mark - MAMapViewDelegate
+- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation
+{
+    [self searchPlaceByAroundWithLocation:[AMapGeoPoint locationWithLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude]];
+    
+}
+
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[POIAnnotation class]])
+    {
+        static NSString *poiIdentifier = @"poiIdentifier";
+        MAPinAnnotationView *poiAnnotationView = (MAPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:poiIdentifier];
+        if (poiAnnotationView == nil)
+        {
+            poiAnnotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:poiIdentifier];
+        }
+        
+        poiAnnotationView.canShowCallout = YES;
+        
+        return poiAnnotationView;
+    }
+    
+    return nil;
+}
+
+#pragma mark - AMapSearchDelegate
+- (void)onPlaceSearchDone:(AMapPlaceSearchRequest *)request response:(AMapPlaceSearchResponse *)response
+{
+    NSLog(@"搜索结果 = %@",response.pois);
+    //[self initAnnotationsWithResponse:response.pois];
+    if (response.pois.count == 0) {
+        return;
+    }
+    NSMutableArray *poiAnnotations = [NSMutableArray arrayWithCapacity:response.pois.count];
+    [response.pois enumerateObjectsUsingBlock:^(AMapPOI *obj, NSUInteger idx, BOOL *stop) {
+        [poiAnnotations addObject:[[POIAnnotation alloc] initWithPOI:obj]];
+    }];
+    [self.mapView addAnnotations:poiAnnotations];
+    //[self.mapView showAnnotations:poiAnnotations animated:YES];
 }
 
 @end
