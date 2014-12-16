@@ -49,9 +49,25 @@
     self.activityView = [[ActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
     [self.view addSubview:self.activityView];
     // 载入首页
-    //[self loadHomePage];
+    [self loadHomePage];
     
     [self configMapView];
+}
+
+- (void)showMap
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.mapBackView.center = CGPointMake(self.bottomBarView.frame.size.width/2+191, 69+MAIN_WEBVIEW_HEIGHT/2);
+        self.mapView.showsUserLocation = YES;
+    }];
+}
+
+- (void)dismissMap
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.mapBackView.center = CGPointMake(self.bottomBarView.frame.size.width/2+191, self.bottomBarView.frame.origin.y+MAIN_WEBVIEW_HEIGHT/2+60);
+        self.mapView.showsUserLocation = NO;
+    }];
 }
 
 - (void)configMapView
@@ -59,10 +75,12 @@
     self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, self.mapBackView.frame.size.width, self.mapBackView.frame.size.height)];
     self.mapView.delegate = self;
     self.mapView.mapType = MAMapTypeStandard;
-    self.mapView.showsUserLocation = YES;
+    self.mapView.showsUserLocation = NO;
     self.mapView.userTrackingMode = MAUserTrackingModeFollow;
     [self.mapView setZoomLevel:15 animated:YES];
     [self.mapBackView addSubview:self.mapView];
+    
+    self.mapBackView.center = CGPointMake(self.bottomBarView.frame.size.width/2+191, self.bottomBarView.frame.origin.y+MAIN_WEBVIEW_HEIGHT/2+60);
     
     self.searchMap = [[AMapSearchAPI alloc] initWithSearchKey:@"57ac3b92223c1c1c3464c39545bc15ec" Delegate:self];
     
@@ -226,7 +244,7 @@
     
     //callfunction://callbackId=WebViewPlugincloseViewEvent&className=WebViewPlugin&method=closeView&params=&currentPage=rindex.html&tt=1418025732006   //关闭弹窗
     
-    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];  //获取单个日期
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=DatePlugingetDateEvent&className=DatePlugin&method=getOneDate&params=2014-12-20$2014-12-25&currentPage=rindex.html&tt=1418115067320" tag:1];  //获取单个日期
     
     // 平移动画, 从左到右
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
@@ -235,11 +253,14 @@
     //changeLoginBtnTitle
     //[self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
     
-    if (((UIButton *)sender).tag == 0) {
-        // 未登录
-    }else{
-        // 已登录
-    }
+//    if (((UIButton *)sender).tag == 0) {
+//        // 未登录
+//    }else{
+//        // 已登录
+//    }
+    //showMap
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginShowMapEvent&className=TransformPlugin&method=showMap&params=0" tag:1];
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginDismissMapEvent&className=TransformPlugin&method=dismissMap&params=0" tag:1];
 }
 
 - (void)loadLocalErrorWithWebView:(UIWebView *)webView
@@ -519,7 +540,7 @@
 #pragma mark - AMapSearchDelegate
 - (void)onPlaceSearchDone:(AMapPlaceSearchRequest *)request response:(AMapPlaceSearchResponse *)response
 {
-    NSLog(@"搜索结果 = %@",response.pois);
+    //NSLog(@"搜索结果 = %@",response.pois);
     //[self initAnnotationsWithResponse:response.pois];
     if (response.pois.count == 0) {
         return;

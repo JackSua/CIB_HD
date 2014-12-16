@@ -152,6 +152,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="ThirdMenuView" destination="Az2-0Z-BAr" id="1Fv-wL-oZY"/>
+                        <outlet property="bottomBarView" destination="zFF-28-vBT" id="cNI-RQ-5Cf"/>
                         <outlet property="btnLogin" destination="1NA-Um-Bd9" id="GG3-tR-72H"/>
                         <outlet property="btnMore" destination="hcJ-1O-WKr" id="AIM-oR-Gux"/>
                         <outlet property="firstMenuTableView" destination="WPs-q9-4i5" id="XzM-VV-oPa"/>

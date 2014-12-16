@@ -18,4 +18,9 @@
 
 - (void)translationWebFromRightToLeft:(NSMutableArray *)arguments;
 
+- (void)showMap:(NSMutableArray *)arguments;
+
+- (void)dismissMap:(NSMutableArray *)arguments;
+
+
 @end

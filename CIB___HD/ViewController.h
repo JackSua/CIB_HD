@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mapBackView;
 @property (strong, nonatomic) AMapSearchAPI *searchMap;
 @property (strong, nonatomic) NSMutableArray *annotations;
+@property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 
 // 缩小第一级菜单
 - (void)shrinkFirstMenu;
@@ -44,5 +45,11 @@
 
 // 将 webView 移动到右侧屏幕之外
 - (void)webViewChangeLeftToRight;
+
+// 显示地图
+- (void)showMap;
+
+// 关闭地图显示
+- (void)dismissMap;
 
 @end

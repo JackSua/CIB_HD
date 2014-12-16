@@ -66,4 +66,16 @@ static TransformPlugin *instance = nil;
     [self executeMethodByCallBackId];
 }
 
+- (void)showMap:(NSMutableArray *)arguments
+{
+    [mainVC showMap];
+    [self callBackAction:arguments];
+}
+
+- (void)dismissMap:(NSMutableArray *)arguments
+{
+    [mainVC dismissMap];
+    [self callBackAction:arguments];
+}
+
 @end
