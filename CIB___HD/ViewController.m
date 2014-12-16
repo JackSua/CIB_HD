@@ -249,17 +249,17 @@
     // 平移动画, 从左到右
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginTranslationEvent&className=TransformPlugin&method=translationWebFromLeftToRight&params=0" tag:1];
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=logined$1" tag:1];
-    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=loginOut$0" tag:0];
+    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginChangeLoginBtnTitleEvent&className=TransformPlugin&method=changeLoginBtnTitle&params=loginOut$0" tag:0];
     //changeLoginBtnTitle
     //[self loadRequestWithWebView:self.mainWebView urlStr:@"https://168.3.27.52/pad/main/transfer/innerTransfer.do?FUNID=TOP01|FIN01|FIN01_01"];
     
-//    if (((UIButton *)sender).tag == 0) {
-//        // 未登录
-//    }else{
-//        // 已登录
-//    }
+    if (((UIButton *)sender).tag == 0) {
+        // 未登录
+    }else{
+        // 已登录
+    }
     //showMap
-    //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginShowMapEvent&className=TransformPlugin&method=showMap&params=0" tag:1];
+    [[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginShowMapEvent&className=TransformPlugin&method=showMap&params=0" tag:1];
     //[[BasicPlugin getInstance] executePluginByUrl:@"callfunction://callbackId=TransformPluginDismissMapEvent&className=TransformPlugin&method=dismissMap&params=0" tag:1];
 }
 
@@ -324,6 +324,7 @@
         self.thirdMenuArray = [self.secondMenuArray[indexPath.row] objectForKey:@"child"];
         [self createThirdMenuView];
         [self webViewChangeLeftToRight];
+        [self dismissMap];
     }
 }
 
