@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="user-scalable=no, width=435, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<title></title>
+	<script type="text/javascript" src="../../resources/js/basic_include.js"></script>
+</head>
+<body>
+<div class="basic_wb">
+<div class="basic_introduction" id="basic_scroll" style="height:100%">
+			<ul>
+				<li>
+					<h1 class="basic_title"><div class="trig"></div>如何注册？</h1>
+					<div class="basic_content">
+					<p class="content">1）点击首页右上角“注册/登录”按钮，进入登录页面，点击“注册”按钮。<br />
+2）根据要求填写：真实姓名、身份证、登录密码、手机号（用于接收手机确认码），点击获取验证码，<br />
+将手机收到的验证码输入，并点击“同意协议并注册”。<br />
+3）绑定银行卡：输入银行账号→选择银行→输入银行卡密码→设置支付密码→确认支付密码→点击“确定”。<br />
+4）注册成功。</p>
+				</li>
+				<li>
+					<h1 class="basic_title"><div class="trig"></div>如何开通掌柜钱包</h1>
+					<div class="basic_content">
+					<p class="content">1）注册成功后，点击“同意协议并开通掌柜钱包”即可开通。<br />
+2）恭喜您，开通成功。可以开始赚钱啦~</p>
+					</div>
+				</li>
+				<li>
+					<h1 class="basic_title"><div class="trig"></div>为什么要填写个人真实信息？</h1>
+					<div class="basic_content">
+					<p class="content">为了保障交易信息的安全并维护您在购买产品过程中的相关权益，我们建议您填写真实的个人信息，相关信息仅用于钱大掌柜的相关业务。</p>
+					</div>
+				</li>
+				<li>
+					<h1 class="basic_title"><div class="trig"></div>为什么要输入手机号？</h1>
+					<div class="basic_content">
+					<p class="content">为了保障您的交易资金安全，我们将向该手机号码发送短信验证码，请确认手机号码可以使用，并正确输入。</p>
+					</div>
+				</li>
+				<li>
+					<h1 class="basic_title"><div class="trig"></div>为什么要绑定银行账号</h1>
+					<div class="basic_content">
+					<p class="content">绑定您持有的银行账号后，您就可以购买钱大掌柜上销售的各类产品</p>
+					</div>
+				</li>
+				<li>
+					<h1 class="basic_title"><div class="trig"></div>为什么要设置购买时的支付密码</h1>
+					<div class="basic_content">
+					<p class="content">在您成功绑定银行账户后，您在购买产品时需要输入的支付密码</p>
+					</div>
+				</li>
+				
+			</ul>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('.basic_introduction ul li').each(function(i,dom){
+			var $dom_h1=$(dom).children('h1');
+			$dom_h1.bind('click',function(){
+				$(dom).siblings('li').children('.basic_content').hide();
+				$(this).parent('li').siblings('li').children('h1').removeClass('cur');
+				var $is_visible=$(dom).children('.basic_content').css('display');
+				if($is_visible=='block'){
+					$(dom).children('.basic_content').hide();
+					$dom_h1.removeClass('cur');
+				}else{
+					$(dom).children('.basic_content').show();
+					$dom_h1.addClass('cur');
+				}
+			})
+		});
+	})
+</script>
+</html>

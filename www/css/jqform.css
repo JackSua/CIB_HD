@@ -1,0 +1,147 @@
+﻿@cherset "utf-8";
+/*Form Content*/
+@media all{
+/**
+ * The Style of function wizard
+ */
+.funcWizard{position:absolute;top:300px; left:300px;padding-bottom:13px;display:block;z-index:95000;cursor:pointer;}
+.funcWizard { cursor:auto}
+.funcWizard .funcWizardContent {width:100%; width:150px;font-family:tahoma;font-size:12px;border:2px solid #ddd;box-shadow: 0px 0px 6px #000;-moz-box-shadow: 0px 0px 6px #000;-webkit-box-shadow: 0px 0px 6px #000;padding:4px 10px 4px 10px;border-radius: 6px;-moz-border-radius: 6px;-webkit-border-radius: 6px;}
+.greenPopup .funcWizardContent {background:#33be40;}
+.blackPopup .funcWizardContent {background:#393939;color:#FFF;}
+.funcWizard .funcWizardArrow{position:absolute;bottom:0;left:20px;width:15px; height:15px;z-index:115001;}
+.funcWizard .funcWizardArrowBottom{top:0;margin:-6px;}
+.funcWizard .funcWizardArrow div{border-top:none;border-bottom:none;border-left:2px solid #ddd;border-right:2px solid #ddd;box-shadow: 0px 2px 3px #444;-moz-box-shadow: 0px 2px 3px #444;-webkit-box-shadow: 0px 2px 3px #444;font-size:0px; height:1px;margin:0 auto;line-height:0px; font-size:0px; display:block;}
+.funcWizard .funcWizardArrowBottom div{box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none;}
+.greenPopup .funcWizardArrow div{background:#33be40;}
+.blackPopup .funcWizardArrow div{background:#393939;color:#FFF;}
+.funcWizard .funcWizardArrow .line10{width:15px;border:none;} 
+.funcWizard .funcWizardArrow .line9{width:13px;border:none;} 
+.funcWizard .funcWizardArrow .line8{width:11px;} 
+.funcWizard .funcWizardArrow .line7{width:9px;} 
+.funcWizard .funcWizardArrow .line6{width:7px;} 
+.funcWizard .funcWizardArrow .line5{width:5px;} 
+.funcWizard .funcWizardArrow .line4{width:3px;} 
+.funcWizard .funcWizardArrow .line3{width:1px;border-left:2px solid #ddd;border-right:2px solid #ddd;border-bottom:0px solid #ddd;} 
+.funcWizard .funcWizardArrow .line2{width:3px;border:none;background:#ddd;}
+.funcWizard .funcWizardArrow .line1{width:1px;border:none;background:#ddd;}
+
+/*
+ * Style of form validation
+ */
+.inputContainer{position: relative;float: left;}
+.formError {position: absolute;top: 300px;left: 300px;display: block;z-index: 5000;cursor: pointer;}
+.ajaxSubmit {padding: 20px;background: #55ea55;border: 1px solid #999;display: none}
+.formError .formErrorContent {box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;background: url("../images/validte_error.png") no-repeat 8px 8px #FFECE8;background-size :19px 17px;position:relative;z-index:5001;color: #DD6240;width: 150px;font-family: tahoma;font-size: 12px;border: 2px solid #DD6240;padding: 10px 35px;border-radius: 6px;-moz-border-radius: 6px;-webkit-border-radius: 6px;}
+.greenPopup .formErrorContent {background: #33be40;}
+.blackPopup .formErrorContent {background: #393939;color: #FFF;}
+.formError .formErrorArrow {width: 15px;margin: -2px 0 0 13px; position:relative; z-index: 5006;}
+.formError .formErrorArrowBottom { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;margin: 0px 0 0 12px;  top:4px;}
+.formError .formErrorArrow div {border-left: 2px solid #DD6240;border-right: 2px solid #DD6240;	font-size: 0px;height: 1px;	background: #FFECE8;margin: 0 auto;line-height: 0;font-size: 0;display: block;}
+.formError .formErrorArrowBottom div { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;}
+.greenPopup .formErrorArrow div {background: #33be40;}
+.blackPopup .formErrorArrow div {background: #393939;color: #FFF;}
+.formError .formErrorArrow .line10 {width: 15px;border: none;}
+.formError .formErrorArrow .line9 {	width: 13px;border: none;}
+.formError .formErrorArrow .line8 {width: 11px;}
+.formError .formErrorArrow .line7 {width: 9px;}
+.formError .formErrorArrow .line6 {width: 7px;}
+.formError .formErrorArrow .line5 {width: 5px;}
+.formError .formErrorArrow .line4 {width: 3px;}
+.formError .formErrorArrow .line3 {width: 1px;border-left: 2px solid #DD6240;border-right: 2px solid #DD6240;border-bottom: 0 solid #ddd;}
+.formError .formErrorArrow .line2 {width: 3px;border: none;background: #DD6240;}
+.formError .formErrorArrow .line1 {width: 1px;border: none;background: #DD6240;}
+  
+/**
+ * Style of form layout
+ */
+.form p.form-p{vertical-align:middle;height:auto!important;height:27px;min-height:27px;margin-bottom:0.1em;width:98%;float:left;}
+.form p.half{width:48%;}
+.form fieldset{clear:both;border:0;border-top:1px dotted #CCCCCC;margin:10px auto;padding:5px 0;width:auto;}
+.form fieldset legend{background-color:#F5FAFE;color:#2E6E9E;}
+.form label.form-label{display:inline-block;width:90px;line-height:21px;text-align:right; color:#014098;}
+.form label.form-label-long100{display:inline-block;width:100px;line-height:21px;text-align:right;color:#014098;}
+.form label.form-label-long120{display:inline-block;width:120px;line-height:21px;text-align:right;color:#014098;}
+.form label.form-label-long150{display:inline-block;width:150px;line-height:21px;text-align:right;color:#014098;}
+.form label.form-label-long180{display:inline-block;width:180px;line-height:21px;text-align:right;color:#014098;}
+.form label.form-label-long250{display:inline-block;width:250px;line-height:21px;text-align:right;color:#014098;}
+.form input.text, .form textarea.text {color:#403F41;border:1px solid #c3c3c3;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;padding:2px 4px;width:198px;vertical-align:middle; box-shadow:0 1px 7px -4px rgba(0, 0, 0, 0.3) inset;-webkit-box-shadow:0 1px 7px -4px rgba(0, 0, 0, 0.3) inset;-moz-box-shadow:0 1px 7px -4px rgba(0, 0, 0, 0.3) inset;}
+.form input.keyboard,.form input.keyboard-min,.form input.smscode{color:#403F41;width:118px;vertical-align:middle;}
+.form .form-value{display:inline-block;width:auto;line-height:21px;}
+.form p.half label.form-label, .form label.form-label-long100,.form label.form-label-long120, .form label.form-label-long150, .form label.form-label-long180, .form label.form-label-long250{float:left;}/*ÉèÖÃfloat´¦Àí»»ÐÐµÄform-value*/
+.form p.half .form-value{width:58%;float:left;line-height:21px;}
+.form .form-infoBox{padding:0.6em 1em;height:auto;}
+.form-btn-div{clear:both;height:auto;width:auto;margin:0.5em auto;text-align:center;}
+.bigText{font-size:20px;font-weight:bold;color:#FF6101;}
+.form input.mask-direct, .form textarea.mask-direct {color:#FF6101;font-size:17px;font-weight:bold;width:225px;}
+.form input.normal, .form textarea.normal {color:#FF6101;font-size:13px;font-weight:normal;}
+
+.form input.disabled,.form input.readonly{ background-color:#ECE9D8}
+.form select{vertical-align:middle;color:#808080;font-size:12px}
+
+/**
+ * Global fixes for YAML's form construction set
+ * @workaround
+ * @affected IE 5.x/Win, IE6, IE7
+ * @css-for IE 5.x/Win, IE6, IE7
+ * @valid no
+ */
+ /* 清除浮动钩子无用
+.form, 
+.form div,
+.form div * { zoom:1; }
+*/
+/**
+ * Forms Fieldset/Legend-Bug in IE
+ * @see http://www.mattheerema.com/web-design/2006/04/getting-fieldset-backgrounds-and-legends-to-behave-in-ie/
+ * @workaround
+ * @affected IE 5.x/Win, IE6, IE7, IE8
+ * @css-for IE 5.x/Win, IE6, IE7, IE8
+ * @valid no
+ */
+/* all IE */
+/*.form { padding-top:0\9; }
+.form fieldset { padding:0 5px\9; padding-top:1em\9; }
+.form legend { position:absolute\9; top:-.5em\9; *left:0\9; }
+.form fieldset { position:relative\9; overflow:visible\9;  margin-top:1.5em\9; zoom:1; }
+/* IE5.x, IE6 & IE7 */
+/*
+.form legend { *padding:0 5px; }
+.form fieldset { *padding-top:1.5em; }*/
+/* IE5.x & IE6 */
+/** html .form { padding-top:10px; }*/
+.tabs-div{width:96%;margin:10px auto}
+
+/*
+ * 表单布局表格
+ */
+.form-table{border:1px solid #e8e8e8;margin:10px auto;background:#f5f5f5;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;border-spacing:0px;width:96%;}
+.form-table th, .form-table td{border:1px solid #dfdfdf;border-top-width:0;border-left-width:0;font-size:12px}
+.form-table th{text-align:center;background:#fefefe;color:#666;font-size:1.1em;font-weight:bold;vertical-align:middle;width:20%;-moz-border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;border-radius:5px 0 0 5px;}
+.form-table td{border-right-width:0;padding:5px;}
+* html .form-table{border-collapse:collapse}
+
+/**
+ * 数据展示table公共样式@lizy
+ */
+.table-h,.table-v{width:96%;margin:10px auto;border-collapse:collapse}
+.table-h caption,.table-v caption{font-weight:bold;text-align:left;color:#006EB3;line-height:24px;padding-left:1em;font-size:13px}
+.table-h tfoot td,.table-v tfoot td{background:#E8EDFF;color:#9999CC}
+/* table-h => 字段名水平排列 */
+.table-h th,.table-h td{line-height:22px;padding:2px;text-align:center}
+.table-h thead th{background:#DFEFFC;color:#2E6E9E;font-weight:normal;border:1px solid #85C4F2}
+.table-h tbody td,.table-h tfoot td{border:1px solid #85C4F2}
+.table-h .odd td{background:#F5FAFE}
+.table-h tfoot td{padding-left:1em;padding-right:1em;text-align:left}
+/*.table-h tbody tr:hover td{background:#d0e5f5 url(images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x}*/
+/* table-v => 字段名垂直排列 */
+.table-v th,.table-v td{line-height:22px;padding:2px 12px}
+.table-v th{width:20%;background:#f5fafe;text-align:right;color:#004785;font-weight:normal;border:1px solid #eaebed}
+.table-v td{width:30%;background:#fff;border:1px solid #eee;word-wrap:break-word;word-break:break-all}
+.table-v .odd td{background:#F5FAFE}
+/*.table-h{ width: 100%;text-align: center;border:1px #DDDDDD solid;border-collapse:collapse}*/
+/*.table-h thead,tr{height: 40px;}*/
+/*.table-h thead th{background: url('../../images/mask_table_th.gif') repeat-x;}*/
+/*.table-h tbody tr.odd{background-color: #f5f8f9;}*/
+/*.table-h tbody tr:hover td{background:#d0e5f5 url(images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x}*/
+}

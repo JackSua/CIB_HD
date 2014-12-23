@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="user-scalable=no, width=435, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<title></title>
+	<script type="text/javascript" src="../../resources/js/basic_include.js"></script>
+</head>
+<body>
+<div class="basic_wb">
+	<div class="basic_introduction" id="basic_scroll" style="height:100%">
+		<ul>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>银行帐号需要与手机号持有人一致吗？</h1>
+				<div class="basic_content">
+				<p class="content">钱大掌柜支持不同的银行账号可以绑定同一手机号码。</p>
+				</div>
+			</li>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>在哪里修改登录密码？</h1>
+				<div class="basic_content">
+				<p class="content">在登录界面，点击“忘记密码”，即可重置登录密码</p>
+				</div>
+			</li>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>我想删除或者更改绑定的银行卡，怎么操作？</h1>
+				<div class="basic_content">
+				<p class="content">登录钱大掌柜—我的账户—银行卡管理—点击“添加”银行卡按钮进行添加；点击已绑定的银行卡进行删除</p>
+				</div>
+			</li>
+			<li>
+				<h1 class="basic_title"><div class="trig"></div>手机客户端注册的账号为什么不能在电脑上登录？</h1>
+				<div class="basic_content">
+				<p class="content">您好，手机客户端和官网客户端都是钱大掌柜登录渠道，因此手机注册的账号是可以在网页登录的，网页注册的账号也可以登录手机客户端，请您核对您的用户名和密码进行确认。</p>
+				</div>
+			</li>
+			
+		</ul>
+				
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('.basic_introduction ul li').each(function(i,dom){
+			var $dom_h1=$(dom).children('h1');
+			$dom_h1.bind('click',function(){
+				$(dom).siblings('li').children('.basic_content').hide();
+				$(this).parent('li').siblings('li').children('h1').removeClass('cur');
+				var $is_visible=$(dom).children('.basic_content').css('display');
+				if($is_visible=='block'){
+					$(dom).children('.basic_content').hide();
+					$dom_h1.removeClass('cur');
+				}else{
+					$(dom).children('.basic_content').show();
+					$dom_h1.addClass('cur');
+				}
+			})
+		});
+	})
+</script>
+</html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,6 +17,20 @@
                BlueprintIdentifier = "0AC750D21A2465AF000A7F86"
                BuildableName = "CIB___HD.app"
                BlueprintName = "CIB___HD"
+               ReferencedContainer = "container:CIB___HD.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0AC750F31A2465AF000A7F86"
+               BuildableName = "CIB___HDTests.xctest"
+               BlueprintName = "CIB___HDTests"
                ReferencedContainer = "container:CIB___HD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -1,0 +1,218 @@
+﻿@media print{
+	.printbuttons{
+		display:none
+	}
+}
+.jqiwarning .jqi{
+      background-color: #E9EDF7;
+}
+.jqifade{
+      background-color: #000000;
+}
+DIV.jqi{
+        position: absolute;
+        text-align: center;
+	font-weight: bold;
+	width:94%;
+	margin: 3%;
+	border-radius: 5px;
+	background: #ffffff;
+	z-index: 999;
+	width:405px;
+}
+DIV.jqi .jqiclose{
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+	color: #c0cea6;
+	/*Modified by Amen*******************/
+	margin: 4px 0 0 453px;
+	color: #FF9B01;
+}
+DIV.jqi .jqicontainer{
+	/*Modified by Amen*******************
+	BACKGROUND-COLOR: #e0eec6;
+	FONT-WEIGHT: bold;
+	*/
+    color:#333;
+	width:405px;
+}
+DIV.jqi .jqimessage{
+	width: 100%;
+    font-size:15px;
+	color: #777777;
+	border-bottom: 1px solid #cfcfcf;
+	height: 100px;
+}
+DIV.jqi .jqimessage .success,.fail{
+	padding: 20px 0 0 30px;
+}
+div.jqi .jqibuttons{
+/*        text-align: center;
+      padding: 5px 0 0 0;*/
+      /*add by linzr 2013-03-08*/
+        text-align: center;
+
+	font-weight: bold;
+
+}
+
+div.jqi .jqibuttons a span{
+	display: block;
+	width: 100%;
+	height:35px;
+	line-height:35px;
+	font-size:16px;
+}
+div.jqi .jqibuttons a{
+	padding:8px 0px;
+}
+div.jqi .jqibuttons a:active{
+	background:#efefef;
+}
+div.jqi .jqibuttons a:hover{
+	background:#efefef;
+}
+div.jqi .jqibuttons a:first-child span{
+	border-right: 1px solid #cfcfcf;
+}
+div.jqi .jqibuttons a:first-child{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    color: #2c7abc;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+}
+div.jqi .jqibuttons a:last-child{
+    color: #2c7abc;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+	width: 50%;
+	display: inline-block;
+}
+div.jqi .jqibuttons a:only-child{
+    color: #2c7abc;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    float:none;
+	width:100%
+}
+div.jqi .jqibuttons a:only-child span{
+	border-right: none;
+}
+/* pwd */
+.pwdwarning .pwd{
+	background-color: #E9EDF7;
+}
+.pwdfade{
+	background-color: #000000;
+}
+DIV.pwd{
+	/*	PADDING-RIGHT: 10px;
+			PADDING-LEFT: 10px;
+			PADDING-BOTTOM: 10px;
+			WIDTH: 300px; */
+	/*        PADDING-TOP:10px; */
+	position: absolute;
+	text-align: center;
+	font-weight: bold;
+	/*Modified by Amen******************
+	width:268px;
+	height:171px;*/
+	/*height:150px;*/
+	width:94%;
+	margin: 3%;
+	border-radius:10px;
+	background: #ffffff;
+	z-index: 999;
+}
+DIV.pwd .pwdclose{
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+	color: #c0cea6;
+	/*Modified by Amen*******************/
+	margin: 4px 0 0 453px;
+	color: #FF9B01;
+}
+DIV.pwd .pwdcontainer{
+	padding: 0 5px 0;
+	/*Modified by Amen*******************
+	BACKGROUND-COLOR: #e0eec6;
+	FONT-WEIGHT: bold;
+	*/
+	color:#333;
+}
+DIV.pwd .pwdinfo{
+	/*height: 104px;*/
+}
+DIV.pwd .pwdinfo input{
+	margin: 10px 0 15px;
+}
+DIV.pwd .pwdtitle{
+	padding-top: 10px ;
+	margin: 0;
+	font-size: 16px;
+	color: #444444;
+}
+DIV.pwd .pwdmessage{
+	width: 100%;
+	font-size:12px;
+	color: #888888;
+	margin: 5px 0;
+}
+DIV.pwd .pwdmessage .success,.fail{
+	padding: 20px 0 0 30px;
+}
+div.pwd .pwdbuttons{
+	/*        text-align: center;
+		  padding: 5px 0 0 0;*/
+	/*add by linzr 2013-03-08*/
+	text-align: center;
+	border-top: 1px solid #cfcfcf;
+	font-weight: bold;
+}
+div.pwd .pwdbuttons a span{
+	display: block;
+	width: 100%;
+}
+div.pwd .pwdbuttons a{
+	padding: 8px 0;
+}
+div.pwd .pwdbuttons a:first-child span{
+	border-right: 1px solid #cfcfcf;
+}
+div.pwd .pwdbuttons a:first-child{
+	color: #2c7abc;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+	width: 50%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+}
+div.pwd .pwdbuttons a:last-child{
+	color: #2c7abc;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+	width: 50%;
+	display: inline-block;
+}
+div.pwd .pwdbuttons span:only-child{
+	color: #2c7abc;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+	border-right: none;
+	float:none;
+	width:100%;
+}
